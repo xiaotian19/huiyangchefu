@@ -7,7 +7,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
     listData: [],//商品数据
+=======
+    listData: [],// 商品数据
+>>>>>>> 47085d77c03fae59b7b6ff0b3bea47f588c42ac9
   },
 
   /**
