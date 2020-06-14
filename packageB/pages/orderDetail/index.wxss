@@ -1,0 +1,52 @@
+
+page{
+  background-color: #f7f7f7;
+}
+
+.order_detail{
+  width: 90%;
+  height: 120rpx;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+
+
+.order_info{
+  width: 65%;
+  height: 100%;
+}
+
+
+.order_info_name{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 25rpx;
+  font-size: 26rpx;
+}
+
+.order_info_time{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 25rpx;
+  font-size: 22rpx;
+  color: #a3a3a3;
+}
+
+.order_money{
+  width: 30%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 无数据 */
+
+.noData{
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+}

@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "门店信息",
+  "usingComponents": {
+    "content-title": "/components/content-title/index",
+    "content-card": "/components/content-card/index",
+    "x-textarea": "/components/textarea/index",
+    "x-image-picker": "/components/image-picker/index",
+    "x-input": "/components/input/index",
+    "x-toast": "/components/toast/index",
+    "x-form": "/components/form/index",
+    "x-form-item": "/components/form-item/index",
+    "x-message": "/components/message/index",
+    "x-button":"/components/x-button/index"
+  }
+}

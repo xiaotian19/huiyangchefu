@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的保养券",
+  "usingComponents": {
+    "x-qrcode":"/components/qrcode/index",
+    "x-segment": "/components/segment/index",
+    "x-tips":"/components/extend/tips/tips",
+    "x-segment-item": "/components/segment-item/index",
+    "x-code":"/components/code/index"
+  }
+}

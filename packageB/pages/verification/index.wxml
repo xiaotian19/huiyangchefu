@@ -1,0 +1,30 @@
+<wxs src='../../../utils/wxs/imgUrl.wxs' module='spliceImg'></wxs>
+<wxs src='../../../utils/wxs/money.wxs' module='money'></wxs>
+
+<view class="success_view" wx:if='{{ couponList }}'>
+
+	<view class="hidden-box">
+
+		<view class="qrcode-box">
+
+			<image style="width:100%;" src="{{ spliceImg.imgUrl(couponList.img) }}" mode='widthFix'></image>
+
+		</view>
+
+		<view class="list-item">
+			<view class="item-tit">价格：</view>
+			<view class="item-con">￥{{ money.Format(couponList.payment,2)}}</view>
+		</view>
+		<view class="list-item">
+			<view class="item-tit">适用地区</view>
+			<view class="item-con">{{couponList.province}} {{ couponList.city }} {{ couponList.district }}</view>
+		</view>
+	</view>
+
+
+
+	<view class="success_view_but flex_nowrap">
+		<button class="success_btn" bindtap="onCallBack">取消</button>
+		<button class="success_btn" bindtap="tapVerificationCoupon">确定核销</button>
+	</view>
+</view>

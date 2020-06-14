@@ -1,0 +1,57 @@
+page{
+  background-color: #f7f7f7;
+}
+
+.staff{
+  width: 90%;
+  margin: 0 auto;
+  padding: 10rpx 0;
+  align-items: center;
+  height: 100rpx;
+  margin-top: 30rpx;
+  background-color: #fff;
+}
+
+.staff_titleImg{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-left: 30rpx;
+}
+
+.staff_info{
+  width: 400rpx;
+  justify-content: center;
+  margin-left: 30rpx;
+}
+
+.staff_name{
+  width: 100%;
+  font-size: 26rpx;
+  color: #333;
+  margin-left: 10rpx;
+}
+
+.staff_tell{
+  width: 100%;
+  margin-top: 10rpx;
+  font-size: 22rpx;
+  color: #a3a3a3;
+}
+
+.deleteStaff{
+  width: 150rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #a3a3a3;
+}
+
+/* 无数据 */
+
+.noData{
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+}
+

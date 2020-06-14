@@ -1,0 +1,207 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false,
+		"compileHotReLoad": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.11.1",
+	"appid": "wx94c580e5ae019dc5",
+	"projectname": "%E5%8D%93%E6%96%AF%E6%8D%B7",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "授权登录页",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店信息",
+					"pathName": "pages/store/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/center/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "车型选择一",
+					"pathName": "packageA/pages/model/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "我的保养劵",
+					"pathName": "packageB/pages/qrcode/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "商品详情",
+					"pathName": "packageA/pages/productDateil/index",
+					"query": "id=21",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付成功页",
+					"pathName": "packageB/pages/paySuccess/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "地区经理注册",
+					"pathName": "packageA/pages/user/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "修理厂注册",
+					"pathName": "packageA/pages/userRepair/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "员工注册",
+					"pathName": "packageA/pages/userStaff/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "车型选择商品列表",
+					"pathName": "packageA/pages/productInfo/index",
+					"query": "ids=14",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "核销确认页",
+					"pathName": "packageB/pages/verification/index",
+					"query": "ids=21,22,23",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "已核销",
+					"pathName": "packageB/pages/repairCoupon/index",
+					"query": "ids=21,22,23",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店信息",
+					"pathName": "packageB/pages/storeInfo/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 14,
+					"name": "我邀请的修理厂",
+					"pathName": "packageB/pages/myInviteRepair/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的员工",
+					"pathName": "packageB/pages/myStaff/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我推荐的车主",
+					"pathName": "packageB/pages/myInviteOwner/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购买记录",
+					"pathName": "packageB/pages/orderDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "佣金记录",
+					"pathName": "packageB/pages/takeDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "门店收入",
+					"pathName": "packageB/pages/incomeDetail/index",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

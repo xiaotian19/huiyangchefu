@@ -1,0 +1,70 @@
+page {
+  background-color: #f1f1f1;
+}
+
+.titles {
+  width: 750rpx;
+  height: 200rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  color: #fff;
+}
+
+.title-left {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.tui-bg-img {
+  width: 100%;
+  height: 346rpx;
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.iconImg {
+  margin-left: 34rpx;
+  display: flex;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.img {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.title-name {
+  margin-left: 34rpx;
+  height: 50rpx;
+}
+
+.title-right {
+  width: 40%;
+  height: 100%;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.navList {
+  margin: 20rpx;
+  border-radius: 40rpx;
+}
+
+.navList > view{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  border-bottom: 2rpx solid #cccccc;
+  background-color: #fff;
+  padding-left: 30rpx;
+}

@@ -1,0 +1,54 @@
+<wxs src='../../../utils/wxs/imgUrl.wxs' module='spliceImg'></wxs>
+<wxs src='../../../utils/wxs/money.wxs' module='money'></wxs>
+<!-- 轮播图 -->
+<view class="tui-banner-swiper">
+	<swiper autoplay="true" interval="5000" duration="150" circular="{{true}}" style="height:{{scrollH}}px" bindchange="bannerChange">
+		<block wx:for="{{  [ spliceImg.imgUrl(detailInfo.img,1) ] }}" wx:key="index">
+			<swiper-item data-index="{{index}}" catchtap="previewImage">
+				<image src="{{ item }}" class="tui-slide-image" mode='widthFix' bindload='getImgInfo' data-src="{{ item }}" />
+			</swiper-item>
+		</block>
+	</swiper>
+	<x-tag type="translucent" tui-tag-class="tui-tag-banner" shape="circleLeft" size="small">{{bannerIndex+1}}/{{1}}</x-tag>
+</view>
+<!-- 轮播图 -->
+
+<!-- 商品信息 -->
+
+<view class="tui-pro-detail">
+	<view class="tui-product-title tui-border-radius">
+		<view class="tui-pro-pricebox tui-padding">
+			<view class="tui-pro-price">
+				<view>￥<text class="tui-price">{{ money.Format(detailInfo.payment,2) }}</text></view>
+			</view>
+		</view>
+		<view class="tui-original-price tui-gray">
+			价格
+			<text class="tui-line-through">￥{{ money.Format(detailInfo.price,2)}}</text>
+		</view>
+		<view class="tui-pro-titbox">
+			<view class="tui-pro-title">{{ detailInfo.name }}</view>
+		</view>
+
+	</view>
+
+	<view class="tui-nomore-box">
+		<x-nomore text="宝贝详情" visible="{{true}}" bgcolor="#f7f7f7"></x-nomore>
+	</view>
+	<view class="tui-product-img tui-radius-all">
+		<image src="{{ item }}" wx:for="{{ [spliceImg.imgUrl(detailInfo.detailImg)] }}" wx:key="index" mode="widthFix"></image>
+	</view>
+	<x-nomore text="已经到最底了" visible="{{true}}" bgcolor="#f7f7f7"></x-nomore>
+	<view class="tui-safearea-bottom"></view>
+	<view class="x-bottom"></view>
+</view>
+
+<!-- 商品信息 -->
+
+<!-- 底部操作栏 -->
+
+<view class="x-operating flex_nowrap">
+	<button class="x-operating_btn btn-normal" bindtap="submitPay">立即购买</button>
+</view>
+
+<!-- 底部操作栏 -->

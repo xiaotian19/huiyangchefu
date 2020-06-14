@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "佣金记录",
+  "usingComponents": {
+    "x-tips":"/components/extend/tips/tips"
+  }
+}

@@ -1,0 +1,11 @@
+<!-- 显示额二维码弹层 -->
+<wxs src='../../utils/wxs/imgUrl.wxs' module='spliceImg'></wxs>
+<view class="codeBack" style="height:{{ res.windowHeight }}px;width:{{ res.windowWidth }}px" wx:if='{{ src }}'></view>
+
+<view class="code {{ animation }}" style="height:{{ res.windowHeight }}px;width:{{ res.windowWidth }}px" wx:if='{{ src }}'>
+  <view class="code_item">
+    <view class="title">{{ role }}</view>
+    <image src="{{ spliceImg.imgUrl(src) }}" class="image" ></image>
+    <view class="but" bindtap="onHide">关闭</view>
+  </view>
+</view>

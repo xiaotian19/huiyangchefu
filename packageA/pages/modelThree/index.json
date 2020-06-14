@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "配置选择",
+  "usingComponents": {
+    "index-list":"/components/index-list/index"
+  }
+}

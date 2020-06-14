@@ -1,0 +1,38 @@
+page{
+  padding-top: 70rpx;
+}
+
+.content {
+  width: 100%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.text-desc {
+  display: flex;
+  width: auto;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #333;
+  padding-left: 25rpx;
+  padding-right: 15rpx;
+  box-sizing: border-box;
+}
+
+
+.label_text{
+  font-size: 26rpx;
+  color: #333;
+  text-align: center;
+}
+
+.l-input-container-class {
+  width: 100% !important;
+}
+
+.form_item{
+  padding: 0rpx !important;
+}

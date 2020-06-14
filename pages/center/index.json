@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "个人中心",
+  "usingComponents": {
+    "x-nav":"/components/navList/index",
+    "content-card":"/components/content-card/index",
+    "x-list":"/components/x-list/index",
+    "x-code":"/components/code/index"
+  }
+}

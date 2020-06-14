@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "门店信息",
+  "usingComponents": {
+    "x-loadmore":"/components/loadmore/index",
+    "x-tips":"/components/extend/tips/tips",
+    "x-icon":"/components/icon/index"
+  }
+}

@@ -1,0 +1,30 @@
+<view class="list" style="height:{{ height - occupyH }}px" wx:if='{{ swiperList }}'>
+	<swiper class="list_swiper" current='{{ current }}' bindchange="swiperChange">
+		<swiper-item wx:for='{{ number }}' wx:key='index'>
+			<scroll-view scroll-y class="list_swiper" refresher-enabled refresher-triggered='{{ drop }}' enable-flex bindscrolltolower='Scrolltolower'>
+				<slot name='swiper{{index}}'></slot>
+
+				<!-- 无数据显示 -->
+				<view class='noData' wx:if='{{ noData }}'>
+					<x-tips fixed="{{ false }}" imgUrl="/static/images/noData.png">{{ noDataText }}</x-tips>
+				</view>
+				<!-- 无数据显示 -->
+				<x-loadmore show='{{ isShow }}' type="{{ navConfig[isLoading?1:0].type }}" color="{{navConfig[isLoading?1:0].color}}" line="{{navConfig[isLoading?1:0].line}}" end-text="{{navConfig[isLoading?1:0].endText}}" loading-text="{{navConfig[isLoading?1:0].loadingText}}" />
+			</scroll-view>
+		</swiper-item>
+	</swiper>
+</view>
+
+
+
+
+<view class="list" style="height:{{  height - occupyH }}px" wx:else>
+	<scroll-view scroll-y class="list_swiper" refresher-enabled refresher-triggered='{{ drop }}' enable-flex bindscrolltolower='Scrolltolower'>
+		<slot></slot>
+		<!-- 无数据显示 -->
+		<view class='noData' wx:if='{{ noData }}'>
+			<x-tips fixed="{{ false }}" imgUrl="/static/images/noData.png">{{ noDataText }}</x-tips>
+		</view>
+		<x-loadmore show='{{ isShow }}' type="{{ navConfig[isLoading?1:0].type }}" color="{{navConfig[isLoading?1:0].color}}" line="{{navConfig[isLoading?1:0].line}}" end-text="{{navConfig[isLoading?1:0].endText}}" loading-text="{{navConfig[isLoading?1:0].loadingText}}" />
+	</scroll-view>
+</view>

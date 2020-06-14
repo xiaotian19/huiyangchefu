@@ -1,0 +1,10 @@
+<view class="success_view">
+   <image class="success_view_image" src="/static/images/paySuccess.png"></image>
+   <view class="success_view_text">支付成功</view>
+   <view class="success_view_tiem">已购买的保养券可以在个人中心中我的保养券中查看</view>
+   <view class="success_view_but flex_nowrap" >
+    <button class="success_btn" bindtap="onCallBack">返回</button>
+    <button class="success_btn" bindtap="onSkipMyCoupon">我的保养券</button>
+   </view>
+
+</view>

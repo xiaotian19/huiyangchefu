@@ -1,0 +1,20 @@
+  <wxs src='../../../utils/wxs/money.wxs' module='money'></wxs>
+  <view class="take_info_number" wx:if='{{ inviteInfo.length != 0 }}'>总收入：￥{{ total }} </view>
+
+
+  <view class="take_detail flex_nowrap" wx:if='{{ take.length != 0 }}' wx:for='{{ take }}' wx:key='index'>
+    <image class="take_img" src="{{ item.buyerImg }}"></image>
+    <view class="take_info flex_dir">
+      <view class="take_info_name" style="font-size:30rpx">{{ item.buyerName }}</view>
+      <view class="take_info_name">{{ item.couponName }}</view>
+      <view class="take_info_time">{{ item.createTime }}</view>
+    </view>
+    <view class="take_money  flex_nowrap ">+{{ money.Format(item.rabate,2) }}</view>
+  </view>
+  
+  
+  <!-- 无数据显示 -->
+  <view class='noData' wx:if='{{ take.length == 0 }}'>
+  	<x-tips fixed="{{ false }}" imgUrl="/static/images/noData.png">暂无佣金记录~~</x-tips>
+  </view>
+  <!-- 无数据显示 -->

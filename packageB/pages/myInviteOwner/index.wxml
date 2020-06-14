@@ -1,0 +1,15 @@
+<x-segment bind:linchange="changeTabs" placement='top' active-color='#5677FC' animated-for-line='{{ true }}' l-class='tabStyle'>
+	<x-segment-item tab="一级{{ typeId == 1 ? '('+ total + ')':''}}" key="{{1}}" />
+	<x-segment-item tab="二级{{ typeId == 2 ? '('+ total + ')':''}}" key="{{2}}" />
+</x-segment>
+
+<view class="owner flex_nowrap" wx:for='{{ inviteInfo }}' wx:key='index' wx:if='{{ inviteInfo.length != 0 }}'>
+	<image class="owner_image" src="{{ item.headImg }}"></image>
+	<view class="owner_name">{{ item.nickname }}</view>
+</view>
+
+
+<!-- 无数据显示 -->
+<view class='noData' wx:if='{{ inviteInfo.length == 0 }}'>
+	<x-tips fixed="{{ false }}" imgUrl="/static/images/noData.png">没有数据啦~</x-tips>
+</view>

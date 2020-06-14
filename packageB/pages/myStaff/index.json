@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的员工",
+  "usingComponents": {
+    "x-list":"/components/list/index",
+    "x-tips":"/components/extend/tips/tips"
+  }
+}

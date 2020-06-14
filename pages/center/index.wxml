@@ -1,0 +1,57 @@
+<!-- 个人信息 -->
+<view class="titles">
+	<view class="title-left">
+		<image src="/static/images/bg_login.png" class="tui-bg-img"></image>
+		<view class="iconImg">
+			<open-data class='img' type='userAvatarUrl'></open-data>
+		</view>
+		<view class="title-name">
+			<open-data class='text-cut' type='userNickName'></open-data>
+		</view>
+	</view>
+</view>
+<!-- 个人信息 -->
+
+<!-- 我的工具 -->
+<view class='navList'>
+	<view>我的工具</view>
+	<x-nav list='{{ list }}' tapType='tap' listNumber='{{ 5 }}' size='{{ 40 }}' bindclick='navTapType'></x-nav>
+</view>
+<!-- 我的工具 -->
+
+
+<!-- boos -->
+
+<content-card class="content" name="门店管理">
+	<x-list title="{{ item.text }}" tapType='tap' icon="yaopin" l-class-icon="iconfont" wx:for='{{ boos }}' wx:key='index' url='{{ item.url }}' data-index='{{ index }}' bind:lintap='boosTapType' />
+</content-card>
+
+
+<!-- boos -->
+
+
+<!-- 地区经理 -->
+
+<content-card class="content" name="员工管理">
+	<x-list title="{{ item.text }}" icon="yaopin" l-class-icon="iconfont" wx:for='{{ repair }}' wx:key='index' url='{{ item.url }}' data-index='{{ index }}' bind:lintap='repairTapType' />
+</content-card>
+
+
+<!-- 地区经理 -->
+
+
+
+<!-- 员工 -->
+
+<content-card class="content" name="地区经理">
+	<x-list title="{{ item.text }}" icon="yaopin" l-class-icon="iconfont" wx:for='{{ staff }}' wx:key='index'  url='{{ item.url }}' data-index='{{ index }}' bind:lintap='staffTapType'/>
+</content-card>
+
+
+<!-- 员工 -->
+
+<!-- 邀请二维码 -->
+
+<x-code src='{{ codeSrc }}' role='{{ role }}'></x-code>
+
+<!-- 邀请二维码 -->

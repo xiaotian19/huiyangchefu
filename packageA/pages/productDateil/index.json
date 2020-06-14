@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "x-tag": "/components/tag/tag",
+    "x-nomore":"/components/nomore/nomore"
+  }
+}

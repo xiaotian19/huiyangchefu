@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "门店收入",
+  "usingComponents": {
+    "x-tips":"/components/extend/tips/tips"
+  }
+}

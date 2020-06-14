@@ -1,0 +1,41 @@
+
+
+
+page{
+  background-color: #f7f7f7;
+}
+
+
+.tabStyle{
+  background-color: #fff;
+}
+
+.owner{
+  width: 85%;
+  margin: 0 auto;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-top: 30rpx;
+  font-size: 26rpx;
+}
+
+.owner_image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.owner_name{
+  margin-left: 40rpx;
+}
+
+
+
+/* 无数据 */
+
+.noData{
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+}

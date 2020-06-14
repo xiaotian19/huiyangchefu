@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#5677FC",
+  "backgroundColorBottom": "#ffffff",
+  "navigationBarTitleText": "门店注册",
+  "usingComponents": {
+    "tui-icon": "/components/x-icon/icon",
+    "tui-button": "/components/button/button"
+  }
+}
