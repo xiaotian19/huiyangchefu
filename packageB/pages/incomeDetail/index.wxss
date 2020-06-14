@@ -1,0 +1,64 @@
+
+page{
+  background-color: #f7f7f7;
+}
+
+.income_info_number {
+  width: 95%;
+  height: 70rpx;
+  font-size: 24rpx;
+  line-height: 70rpx;
+  color: #a3a3a3;
+  padding-left: 5%;
+  position: relative;
+  z-index: 9999;
+  top: 0;
+}
+
+.income_detail{
+  width: 90%;
+  height: 120rpx;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+
+
+.income_info{
+  width: 65%;
+  height: 100%;
+}
+
+
+.income_info_name{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 25rpx;
+  font-size: 26rpx;
+}
+
+.income_info_time{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding-left: 25rpx;
+  font-size: 22rpx;
+  color: #a3a3a3;
+}
+
+.income_money{
+  width: 30%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 无数据 */
+
+.noData{
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+}

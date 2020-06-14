@@ -1,0 +1,8 @@
+<view class="view-container" >
+	<l-grid row-num="{{ listNumber }}" show-row-border="{{ true }}">
+		<l-grid-item wx:for="{{ list }}" wx:key="index" key="{{ index }}" slot="{{ index }}" l-grid-item="grid-item" bindlinitemtap='spipUrl'>
+			<l-icon name="{{ item.image }}" size="{{ size || 60 }}"/>
+			<view class="text">{{item.text}}</view>
+		</l-grid-item>
+	</l-grid>
+</view>

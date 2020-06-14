@@ -1,0 +1,132 @@
+
+page{
+  background-color: #f7f7f7;
+}
+
+.tui-group-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: center;
+  padding: 35rpx 0;
+  margin-top: 20rpx;
+}
+
+
+.tui-product-box {
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+
+.tui-product-category {
+  background: #fff;
+  padding: 80rpx 20rpx 30rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 24rpx;
+  color: #555;
+  margin-bottom: 20rpx;
+}
+
+
+.tui-product-list {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  /* padding-top: 20rpx; */
+}
+
+.tui-product-container {
+  flex: 1;
+  margin-right: 2%;
+}
+
+.tui-product-container:last-child {
+  margin-right: 0;
+}
+
+
+.tui-pro-item {
+  width: 100%;
+  margin-bottom: 4%;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.tui-pro-img {
+  width: 100%;
+  display: block;
+}
+
+.tui-pro-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+
+.tui-pro-tit {
+  color: #2e2e2e;
+  font-size: 26rpx;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.tui-pro-price {
+  padding-top: 18rpx;
+}
+
+.tui-sale-price {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #e41f19;
+}
+
+.tui-factory-price {
+  font-size: 22rpx;
+  color: #a0a0a0;
+  text-decoration: line-through;
+  padding-left: 12rpx;
+}
+
+.tui-pro-pay {
+  padding-top: 10rpx;
+  font-size: 24rpx;
+  color: #656565;
+}
+
+
+.pro-btn{
+  width: 90%;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  background-color: #5677FC;
+  color: #fff;
+  font-size: 26rpx;
+  border-radius: 20rpx;
+  margin: 10rpx auto;
+}
+
+
+/* 无数据 */
+
+.noData{
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+}
+
+

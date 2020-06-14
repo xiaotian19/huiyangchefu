@@ -1,0 +1,16 @@
+<view class="staff flex_nowrap" wx:for='{{ staff }}' wx:key='index' wx:if='{{ staff.length != 0 }}'>
+	<image class="staff_titleImg" src="{{ item.headImg }}"></image>
+	<view class="staff_info flex_dir">
+		<view class="staff_name">{{ item.nickname }}</view>
+		<view class="staff_tell">{{ item.phone }}</view>
+	</view>
+	 <view class="deleteStaff" bindtap="removeStaff" data-id="{{ item.id }}">删除</view>
+</view>
+
+
+
+<!-- 无数据显示 -->
+<view class='noData' wx:if='{{ staff.length == 0}}'>
+	<x-tips fixed="{{ false }}" imgUrl="/static/images/noData.png">无员工数据~</x-tips>
+</view>
+<!-- 无数据显示 -->

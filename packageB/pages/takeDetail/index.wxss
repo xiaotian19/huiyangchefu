@@ -1,0 +1,69 @@
+
+page{
+  background-color: #f7f7f7;
+}
+
+.take_info_number {
+  width: 95%;
+  height: 70rpx;
+  font-size: 24rpx;
+  line-height: 70rpx;
+  color: #a3a3a3;
+  padding-left: 5%;
+  position: relative;
+  z-index: 9999;
+  top: 0;
+}
+
+.take_detail{
+  width: 90%;
+  height: 150rpx;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+
+.take_img{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.take_info{
+  width: 65%;
+  height: 100%;
+}
+
+
+.take_info_name{
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding-left: 25rpx;
+  font-size: 24rpx;
+}
+
+.take_info_time{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-left: 25rpx;
+  font-size: 22rpx;
+  color: #a3a3a3;
+}
+
+.take_money{
+  width: 30%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 无数据 */
+
+.noData{
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+}

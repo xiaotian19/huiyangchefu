@@ -1,0 +1,74 @@
+<!-- <x-form bindsubmit="submitFormInfo">
+	<content-card class="content" name="基本信息">
+
+		<view>
+			
+			<x-input hide-label label="门店名称" label-width="230" placeholder="请输入门店名称" type="text" rules="{{ nameRules }}" tipType="message" name='name' />
+			<x-input label="联系电话" label-width="230" placeholder="请输入联系电话" type="number" rules="{{ phoneRules }}" tipType="message" name='phone' />
+			<x-input label="门店地址" label-width="230" placeholder="请输入门店地址" type="number" rules="{{ addressRules }}" tipType="message" name='address' />
+
+			<text class="text-desc">* 门店简介~~</text>
+			<x-textarea l-class="textarea-class" placeholder="尽情展示自己..." tipType="text" name="detail" rules="{{ userRules }}" name='profile' />
+
+		</view>
+	</content-card>
+
+	<content-card class="content" name="上传门店照片">
+		<x-image-picker urls="{{arr2}}" count="12" size="4" />
+	</content-card>
+
+	<view class="content">
+		<x-button loading="{{ true }}" size="large" formType='submit'>确认提交</x-button>
+	</view>
+</x-form> -->
+
+<x-toast />
+<x-message />
+
+
+
+<content-card class="content" name="基本信息" l-content='form_item'>
+
+	<x-form bind:linsubmit="submitFormInfo" name='store' trigger='blur'>
+
+		<x-form-item label='门店名称' name='name' l-form-label-class='label_text' tip-type='message' rules='{{ nameRules }}' align-items='center' label-width='300'>
+
+			<x-input l-class="l-input-container-class" id="name" value="{{ store.name }}" hide-label placeholder="请输入门店名称" type="text" tipType="message" />
+
+		</x-form-item>
+
+
+		<x-form-item label='联系电话' name='phone' l-form-label-class='label_text' tip-type='message' rules='{{ phoneRules }}' align-items='center' label-width='300'>
+
+			<x-input l-class="l-input-container-class" id="phone" value="{{ store.phone }}" hide-label placeholder="请输入联系电话" type="text" tipType="message" maxlength='{{ 11 }}'/>
+
+		</x-form-item>
+
+
+
+		<x-form-item label='门店地址' name="address" l-form-label-class='label_text' tip-type='message' rules='{{ addressRules }}' align-items='center' label-width='300'>
+
+			<x-input l-class="l-input-container-class" id="address" value="{{ store.address }}" hide-label placeholder="请输入门店地址" type="text" tipType="message" />
+
+		</x-form-item>
+
+
+		<x-form-item name='profile' tip-type='message' labelWidth='0' l-form-item-class='form_item' rules='{{ profileRules }}' >
+			<content-card class="content" name="门店简介">
+
+				<x-textarea l-class="textarea-class" placeholder="尽情展示自己..." tipType="message" rules="{{ userRules }}" id='profile' auto-height='{{ true }}' maxlength='{{ 300 }}' value="{{ store.profile }}" />
+
+			</content-card>
+
+		</x-form-item>
+
+		<content-card class="content" name="上传门店照片">
+			<x-image-picker urls="{{ store.filedata }}" count="3" size="3" preview='{{ true }}' bind:linchange='addImgUrl' bind:linremove='removeImgUrl'/>
+		</content-card>
+
+		<view class="content" slot='submit'>
+			<x-button loading="{{ srartSubmit }}" size="large">确认提交</x-button>
+		</view>
+
+	</x-form>
+</content-card>

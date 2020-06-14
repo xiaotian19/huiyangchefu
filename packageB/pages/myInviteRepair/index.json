@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "x-segment": "/components/segment/index",
+    "x-tips":"/components/extend/tips/tips",
+    "x-segment-item": "/components/segment-item/index"
+  }
+}

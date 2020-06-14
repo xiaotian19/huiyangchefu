@@ -1,0 +1,10 @@
+
+var imgUrl = function(url){
+    if(!url){
+      return url
+    }
+    return 'https://www.zsjvp.com/car/' + url
+  }
+
+
+module.exports.imgUrl = imgUrl;

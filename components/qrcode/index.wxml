@@ -1,0 +1,67 @@
+<wxs src='../../utils/wxs/imgUrl.wxs' module='spliceImg'></wxs>
+<wxs src='../../utils/wxs/money.wxs' module='money'></wxs>
+
+<view class="container">
+	<!-- <cover-view class="header" wx-if="{{show}}">
+		<cover-view>您共有</cover-view>
+		<cover-view class="coupon-num">{{ couponList.length }}张</cover-view>
+		<cover-view>可使用的保养券</cover-view>
+	</cover-view> -->
+	<view class="coupon-list">
+		<view class="coupon-item" wx:for="{{ couponList }}" wx:key='index'>
+			<view class="coupon">
+				<image src="{{ item.state == 1 ? 'img_fuwuquan_blue@3x.png' : 'img_fuwuquan_gray@3x.png' }}" class="coupon-img"></image>
+				<view class="circle-left"></view>
+				<view class="circle-right"></view>
+				<view class="left-tit-box">
+					<view class="tit">{{item.coupon.name}}</view>
+
+					<view class="term">数量：{{ item.amount }} 张</view>
+				</view>
+				<view class="right-detail" bindtap="spread" data-index="{{index}}">
+					<text class="detail-txt">{{ item.state == 1 ? btnText : '已使用'}}</text>
+					<view class="arrow_item">
+						<image src="{{item.spread?'home_icon_choose@3x':'icon_next@3x'}}.png" class="{{item.spread?'spread':'arrow'}}"></image>
+					</view>
+				</view>
+			</view>
+
+			<view class="hidden-box" hidden="{{ !item.spread }}">
+				<!-- <view class="code-tit">验证码</view>
+				<view class="code-num">{{item.code}}</view> -->
+				<view class="qrcode-box">
+					<!-- <view class="qrcode"> -->
+					<canvas wx:if="{{ type == 'canvas'}}" style="width:{{qrcode_w}}px; height:{{qrcode_w}}px;" canvas-id="couponQrcode{{index}}"></canvas>
+					<image wx:else style="width:100%;" src="{{ spliceImg.imgUrl(item.coupon.img) }}" mode='widthFix'></image>
+					<!-- </view> -->
+				</view>
+				<!-- <view class="list-item">
+          <view class="item-tit">券有效期</view>
+          <view class="item-con">{{item.sendTime}}至{{item.invalidTime}}</view>
+        </view> -->
+
+				<view class="list-item">
+					<view class="item-tit">价格：</view>
+					<view class="item-con">￥{{ money.Format(item.coupon.price,2)}}</view>
+				</view>
+				
+				<view class="list-item">
+					<view class="item-tit">适用地区</view>
+					<view class="item-con">{{item.coupon.province}} {{ item.coupon.city }} {{ item.coupon.district }}</view>
+				</view>
+
+				<view class="btn_item">
+					<view class="btn" bindtap="tapCreateCode" data-item="{{ item.coupon }}">生成核销码</view>
+					<view class="btn" bindtap="tapUpgradeCode" data-item="{{ item.coupon }}" wx:if='{{ item.state ==  1 }}'>升级保养券</view>
+				</view>
+
+				<!-- <view class="explain">使用说明</view>
+        <view class="explain-text" wx:for="{{item.useDescribe}}" wx:for-item="items" wx:key="items">{{items}}</view> -->
+			</view>
+
+
+		</view>
+
+	</view>
+	<view class="none" wx:if='{{ couponList.length <= 0  && noDataText  }}'>{{ noDataText }}~</view>
+</view>

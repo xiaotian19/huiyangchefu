@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "x-nav":"/components/navList/index",
+    "x-button":"/components/extend/button/button",
+    "x-icon":"/components/icon/index",
+    "x-tips":"/components/extend/tips/tips"
+  }
+}

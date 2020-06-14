@@ -1,0 +1,22 @@
+
+
+.List{
+  width: 100%;
+}
+
+.list_swiper{
+  width: 100%;
+  height: 100%;
+}
+
+.loadmore{
+  margin-top: 30rpx;
+}
+
+
+/* 无数据 */
+
+.noData{
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+}

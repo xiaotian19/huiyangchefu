@@ -1,0 +1,15 @@
+page{
+  background-color: #f7f7f7;
+}
+
+.tabStyle{
+  background-color: #fff;
+}
+
+
+/* 无数据 */
+
+.noData{
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+}

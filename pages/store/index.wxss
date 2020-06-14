@@ -1,0 +1,93 @@
+
+.store{
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  background-color: #f1f1f1;
+}
+
+.storeInfo{
+  width: 90%;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+  border-radius: 25rpx;
+  background-color: #fff;
+}
+
+.storeImg{
+  width: 100%;
+  height: 300rpx;
+  border-top-left-radius: 25rpx;
+  border-top-right-radius: 25rpx;
+}
+
+
+.storeInfo_view{
+  width: 88%;
+  padding: 0rpx 6% 20rpx 6%;
+  justify-content: space-evenly;
+}
+
+.storeInfo_title{
+  width: 100%;
+  justify-content: space-between;
+}
+
+.storeInfo_title_name{
+  width: 70%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+
+.storeInfo_title_nav{
+  width: 25%;
+  font-size: 26rpx;
+  height: 80rpx;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.storeInfo_tell{
+  width: 100%;
+  justify-content: space-between;
+  font-size: 26rpx;
+  line-height: 60rpx;
+}
+
+._tell{
+  margin-left: 25rpx;
+}
+
+
+.storeInfo_address{
+  width: 100%;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  color: #a2a2a2;
+}
+
+._distance{
+  font-size: 26rpx;
+  line-height: 60rpx;
+  color: #a2a2a2;
+}
+
+.storeInfo_address > view{
+  margin-left: 25rpx;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+
+/* 无数据 */
+
+.noData{
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+  background-color: transparent;
+}

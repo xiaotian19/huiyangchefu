@@ -1,0 +1,6 @@
+
+
+<index-list bind:click="itemClick" empty-show="{{ emptyShow }}" top-size="{{ topSize }}" list-data="{{listData}}" color="#3F82FD" bindclick='skipModul'></index-list>
+
+
+

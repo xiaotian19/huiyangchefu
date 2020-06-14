@@ -1,0 +1,58 @@
+page {
+  background-color: #f7f7f7;
+}
+
+.invite_info_number {
+  width: 95%;
+  height: 70rpx;
+  font-size: 24rpx;
+  line-height: 70rpx;
+  color: #a3a3a3;
+  padding-left: 5%;
+  position: relative;
+  z-index: 9999;
+  top: 0;
+}
+
+.invite_info {
+  width: 85%;
+  border-radius: 20rpx;
+  margin: 0 auto;
+  background-color: #fff;
+  margin-top: 30rpx;
+  padding: 30rpx;
+}
+
+.invite_info_name {
+  font-size: 28rpx;
+  color: #333;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.invite_info_name>text {
+  margin-left: 30rpx;
+  font-size: 22rpx;
+  color: #a3a3a3;
+}
+
+.invite_info_address {
+  margin-top: 20rpx;
+  line-height: 45rpx;
+  font-size: 26rpx;
+  color: #a3a3a3;
+}
+
+.invite_info_bossName {
+  height: 60rpx;
+  font-size: 26rpx;
+  color: #333;
+  line-height: 60rpx;
+}
+
+/* 无数据 */
+
+.noData{
+  margin-top: 80rpx;
+  margin-bottom: 80rpx;
+}

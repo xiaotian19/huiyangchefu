@@ -1,0 +1,20 @@
+<view class="invite_info_number" wx:if='{{ inviteInfo.length != 0 }}'>您邀请了：{{ total }} 家门店</view>
+
+<!-- 无数据显示 -->
+<view class='noData' wx:else>
+	<x-tips fixed="{{ false }}" imgUrl="/static/images/noData.png">没有数据啦~</x-tips>
+</view>
+
+<view class="invite_info flex_dir" wx:for='{{ inviteInfo }}' wx:key='index'>
+	<view class="invite_info_name">
+		门店名称：{{ item.name }}
+	</view>
+	<view class="invite_info_name">联系电话：{{ item.phone }}</view>
+
+	<view class="invite_info_name">
+		负责人：{{ item.bossName }}
+		<text>邀请时间：{{ item.createTime }}</text>
+	</view>
+	<view class="invite_info_address">门店地址：{{ item.address }}</view>
+</view>
+

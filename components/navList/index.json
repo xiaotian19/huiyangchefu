@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "content-card": "/components/content-card/index",
+    "l-grid-item": "/components/grid-item/index",
+    "l-grid": "/components/grid/index",
+    "l-icon":"/components/icon/index"
+  }
+}

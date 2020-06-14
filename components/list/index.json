@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "x-content-card": "/components/content-card/index",
+    "x-tips":"../extend/tips/tips",
+    "x-loadmore":"/components/loadmore/index"
+  }
+}

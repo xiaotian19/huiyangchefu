@@ -1,0 +1,21 @@
+   <x-segment bind:linchange="changeTabs" placement='top' active-color='#5677FC' animated-for-line='{{ true }}'l-class='tabStyle'>
+   	<x-segment-item tab="未使用" key="{{1}}" />
+   	<x-segment-item tab="已使用" key="{{2}}" />
+   </x-segment>
+
+
+
+   <x-qrcode couponList='{{ couponList }}' wx:if='{{ couponList.length > 0 }}' bindCreate='tapCreateCode' bindUpgrade='tapUpgradeCode'></x-qrcode>
+
+
+   <!-- 无数据显示 -->
+	<view  class='noData' wx:else>
+	  <x-tips fixed="{{ false }}" imgUrl="/static/images/noData.png" >暂无保养券数据~~</x-tips>
+	</view>
+<!-- 无数据显示 -->
+
+<!-- 邀请二维码 -->
+
+<x-code src='{{ codeSrc }}' role='{{ role }}'></x-code>
+
+<!-- 邀请二维码 -->

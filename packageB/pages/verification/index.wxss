@@ -1,0 +1,61 @@
+
+
+.hidden-box {
+  padding: 25rpx 30rpx 20rpx 30rpx;
+  box-sizing: border-box;
+  color: #333;
+  border-top: 1rpx solid #EAEEF1;
+  background-color: #fff;
+}
+
+
+.qrcode-box {
+  width: 100%;
+  border-bottom: 1rpx dashed #eaeef1;
+  margin-bottom: 6rpx;
+}
+
+
+.list-item {
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+}
+
+.list-item::after {
+  left: 0;
+}
+
+.item-tit {
+  color: #666;
+}
+
+.item-con {
+  color: #333;
+}
+
+
+
+
+.success_view_but {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 26rpx;
+  margin-top: 150rpx;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.success_btn{
+  width: 300rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  background-color: #3963BC;
+  color: #fff;
+  margin: 0;
+}

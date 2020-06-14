@@ -1,0 +1,61 @@
+
+/* flex布局 */
+
+.flex_wrap{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex_nowrap{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.flex_dir{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* 背景色 （主题色） */
+
+.bgColor{
+  background-color: #5677FC;
+  border-radius: 20rpx;
+}
+
+.bgColor_cencel{
+  background: #dfdfdf;
+  border-radius: 20rpx;
+}
+
+
+/* 无样式button (用于伪submit) */
+
+.btn-normal {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  font-size: unset;
+  text-align: unset;
+  overflow: visible;
+  color: inherit;
+}
+
+.btn-normal:after {
+  border: none;
+}
+
+.btn-normal.button-hover {
+  color: inherit;
+}
+
+button:after {
+  content: none;
+  border: none;
+}

@@ -1,0 +1,18 @@
+  <wxs src='../../../utils/wxs/money.wxs' module='money'></wxs>
+  
+  <view class="income_info_number" wx:if='{{ inviteInfo.length != 0 }}'>总收入：￥{{ total }} </view>
+
+  <view class="income_detail flex_nowrap" wx:if='{{ income.length != 0 }}' wx:for='{{ income }}' wx:key='index'>
+    <view class="income_info flex_dir">
+      <view class="income_info_name">{{ item.couponName }}</view>
+      <view class="income_info_time">{{ item.createTime }}</view>
+    </view>
+    <view class="income_money  flex_nowrap ">+{{ money.Format(item.rabate,2) }}</view>
+  </view>
+  
+  
+  <!-- 无数据显示 -->
+  <view class='noData' wx:if='{{ income.length == 0 }}'>
+  	<x-tips fixed="{{ false }}" imgUrl="/static/images/noData.png">暂无收入~~</x-tips>
+  </view>
+  <!-- 无数据显示 -->

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "购买记录",
+  "usingComponents": {
+    "x-tips":"/components/extend/tips/tips"
+  }
+}

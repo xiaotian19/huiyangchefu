@@ -1,0 +1,11 @@
+var money = {
+    toFix: function(_val, count) {
+        if(isNaN(_val)){
+            return _val;
+        }
+        return _val.toFixed(count);
+    }
+}
+module.exports = {
+    Format: money.toFix
+}
