@@ -34,14 +34,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getUserInfo();
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    
   },
 
   /**
@@ -163,4 +163,21 @@ Page({
       wx.hideLoading()
     })
   },
+
+
+  /**
+   * 获取用户信息
+   */
+
+  getUserInfo(){
+    let self = this;
+    
+    HTTP.httpGet('getUserInfo').then(res=>{
+      console.log(res)
+    }).catch(err=>{
+      console.log('获取用户信息失败---'.err)
+    })
+  }
+
+
 })

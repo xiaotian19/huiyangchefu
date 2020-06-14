@@ -22,7 +22,7 @@
 
 <!-- boos -->
 
-<content-card class="content" name="门店管理">
+<content-card class="content" name="门店管理" wx:if='{{ false }}'>
 	<x-list title="{{ item.text }}" tapType='tap' icon="yaopin" l-class-icon="iconfont" wx:for='{{ boos }}' wx:key='index' url='{{ item.url }}' data-index='{{ index }}' bind:lintap='boosTapType' />
 </content-card>
 
@@ -32,7 +32,7 @@
 
 <!-- 地区经理 -->
 
-<content-card class="content" name="员工管理">
+<content-card class="content" name="员工管理" wx:if='{{ false }}'>
 	<x-list title="{{ item.text }}" icon="yaopin" l-class-icon="iconfont" wx:for='{{ repair }}' wx:key='index' url='{{ item.url }}' data-index='{{ index }}' bind:lintap='repairTapType' />
 </content-card>
 
@@ -43,7 +43,7 @@
 
 <!-- 员工 -->
 
-<content-card class="content" name="地区经理">
+<content-card class="content" name="地区经理" wx:if='{{ false }}'>
 	<x-list title="{{ item.text }}" icon="yaopin" l-class-icon="iconfont" wx:for='{{ staff }}' wx:key='index'  url='{{ item.url }}' data-index='{{ index }}' bind:lintap='staffTapType'/>
 </content-card>
 

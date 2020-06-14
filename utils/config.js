@@ -23,6 +23,7 @@ var _config = {
 
   ApiUrl: {
     "login": "/a_app_login.action", //用户登录
+    "getUserInfo":"a_app_getUserInfo.action",//获取用户信息
     "swiperImg": "/a_app_getBannerList.action", //轮播图数据
     "orderPayment": "/a_app_wxPay.action", //微信支付
     "couponList": "/a_app_getCouponList.action", //获取保养券列表
