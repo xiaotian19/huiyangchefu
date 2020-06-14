@@ -224,7 +224,7 @@ function isLogin() {
                     url: '/pages/login/login',
                 })
             }
-            if (res.cancel && getCurrentPages().length > 0) {
+            if (res.cancel && getCurrentPages().length > 1) {
                 wx.navigateBack()
             }
         }

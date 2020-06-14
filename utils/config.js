@@ -23,7 +23,7 @@ var _config = {
 
   ApiUrl: {
     "login": "/a_app_login.action", //用户登录
-    "getUserInfo":"a_app_getUserInfo.action",//获取用户信息
+    "getUserInfo":"/a_app_getUserInfo.action",//获取用户信息
     "swiperImg": "/a_app_getBannerList.action", //轮播图数据
     "orderPayment": "/a_app_wxPay.action", //微信支付
     "couponList": "/a_app_getCouponList.action", //获取保养券列表
@@ -73,7 +73,7 @@ var _config = {
    * 需要验证登录接口
    */
 
-  isLogin: ['orderPayment', 'getCode','myInviteOwner','getTakeDetail','myCoupon','getOrderDetail','alreadyVerification','getIncomeDetail','getStaffInfo','getRepairInfo'],
+  isLogin: ['orderPayment', 'getCode','myInviteOwner','getTakeDetail','myCoupon','getOrderDetail','alreadyVerification','getIncomeDetail','getStaffInfo','getRepairInfo','getUserInfo'],
 
   /**
    * 首页导航配置
@@ -127,7 +127,7 @@ var _config = {
     url:"/packageB/pages/incomeDetail/index"
   }, {
     text: '我的流水', //名字
-    
+    url:'/packageB/pages/incomeDetail/index'
   }, {
     text: '我的员工', //名字
     url:"/packageB/pages/myStaff/index"

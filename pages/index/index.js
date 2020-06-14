@@ -245,7 +245,10 @@ Page({
    */
   callPhone() {
     wx.makePhoneCall({
-      phoneNumber: this.data.stores.phone
+      phoneNumber: this.data.stores.phone,
+      fail:err=>{
+        console.log('拨打电话取消了',err)
+      }
     })
   },
 

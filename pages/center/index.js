@@ -14,6 +14,7 @@ Page({
     repair: config.repair, //地区经理
     codeSrc: '', //邀请二维码
     role: '', //邀请注册身份
+    userRole:0,//用户身份 2 门店 3门店员工 4 地区经理 
   },
 
   /**
@@ -173,7 +174,9 @@ Page({
     let self = this;
     
     HTTP.httpGet('getUserInfo').then(res=>{
-      console.log(res)
+      self.setData({
+        userRole:res.rows[0].userType
+      })
     }).catch(err=>{
       console.log('获取用户信息失败---'.err)
     })
