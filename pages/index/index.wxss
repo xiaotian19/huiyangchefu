@@ -128,6 +128,11 @@
   margin-top: 20rpx;
 }
 
+.tui-flex-list {
+  display: flex;
+  margin-bottom: 10rpx !important;
+}
+
 
 .tui-product-box {
   margin-top: 20rpx;
@@ -161,9 +166,10 @@
 }
 
 .tui-product-container {
-  flex: 1;
   margin-right: 2%;
+  width: 100%;
 }
+
 
 .tui-product-container:last-child {
   margin-right: 0;
@@ -172,6 +178,8 @@
 
 .tui-pro-item {
   width: 100%;
+  display: flex;
+  align-items: center;
   margin-bottom: 4%;
   background: #fff;
   box-sizing: border-box;
@@ -182,6 +190,13 @@
 .tui-pro-img {
   width: 100%;
   display: block;
+}
+
+.tui-proimg-list {
+  width: 260rpx;
+  height: 260rpx;
+  flex-shrink: 0;
+  border-radius: 12rpx;
 }
 
 .tui-pro-content {

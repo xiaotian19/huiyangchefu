@@ -1,5 +1,5 @@
   <wxs src='../../../utils/wxs/money.wxs' module='money'></wxs>
-  <view class="take_info_number" wx:if='{{ inviteInfo.length != 0 }}'>总收入：￥{{ total }} </view>
+  <view class="take_info_number" wx:if='{{ take.length != 0 }}'>总收入：￥{{ total }} </view>
 
 
   <view class="take_detail flex_nowrap" wx:if='{{ take.length != 0 }}' wx:for='{{ take }}' wx:key='index'>

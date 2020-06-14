@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "我邀请的门店",
   "usingComponents": {
     "x-segment": "/components/segment/index",
     "x-tips":"/components/extend/tips/tips",

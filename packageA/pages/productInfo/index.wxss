@@ -12,6 +12,13 @@ page{
 }
 
 
+.tui-flex-list {
+  width: 100%;
+  display: flex;
+  margin-bottom: 10rpx !important;
+}
+
+
 .tui-product-box {
   margin-top: 20rpx;
   padding: 0 20rpx;
@@ -43,8 +50,8 @@ page{
 }
 
 .tui-product-container {
-  flex: 1;
   margin-right: 2%;
+  width: 100%;
 }
 
 .tui-product-container:last-child {
@@ -54,6 +61,8 @@ page{
 
 .tui-pro-item {
   width: 100%;
+  display: flex;
+  align-items: center;
   margin-bottom: 4%;
   background: #fff;
   box-sizing: border-box;
@@ -64,6 +73,14 @@ page{
 .tui-pro-img {
   width: 100%;
   display: block;
+}
+
+
+.tui-proimg-list {
+  width: 260rpx;
+  height: 260rpx;
+  flex-shrink: 0;
+  border-radius: 12rpx;
 }
 
 .tui-pro-content {
@@ -110,15 +127,14 @@ page{
 
 
 .pro-btn{
-  width: 90%;
+  position: absolute;
+  right: 30rpx;
+  width: 100rpx;
   height: 60rpx;
   text-align: center;
   line-height: 60rpx;
-  background-color: #5677FC;
-  color: #fff;
+  color: #5677FC;
   font-size: 26rpx;
-  border-radius: 20rpx;
-  margin: 10rpx auto;
 }
 
 

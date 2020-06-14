@@ -4,7 +4,7 @@ var md5 = require('md5.js');
 /**
  * GET 请求
  */
-function Get(url, data,loadingText) {
+function Get(url, data, loadingText) {
     return new Promise((resolve, reject) => {
         // 验证登录
         if (config.isLogin.indexOf(url) != -1 && checkIsLogin()) return;
@@ -223,6 +223,9 @@ function isLogin() {
                 wx.navigateTo({
                     url: '/pages/login/login',
                 })
+            }
+            if (res.cancel && getCurrentPages().length > 0) {
+                wx.navigateBack()
             }
         }
     })

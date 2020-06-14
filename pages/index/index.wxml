@@ -2,7 +2,7 @@
 <wxs src='../../utils/wxs/money.wxs' module='money'></wxs>
 <!-- 定位最近门店 -->
 
-<view class="stores">
+<view class="stores" wx:if='{{ stores.filedata !=  undefined }}'>
 	<image class="storeImg" src="{{ stores.filedata[0] }}"></image>
 	<view class="storeInfo">
 		<view class="title">{{ stores.name }}</view>
@@ -44,7 +44,7 @@
 <!-- 轮播图 -->
 
 <!-- 导航 -->
-<x-nav list='{{ list }}' listNumber='{{ 2 }}'></x-nav>
+<x-nav list='{{ list }}' listNumber='{{ 2 }}' tapType='url'></x-nav>
 <!-- 导航 -->
 
 <!-- 搜索框 -->
@@ -93,8 +93,8 @@
 <!--模板-->
 <template name="productItem">
 	<!--商品列表-->
-	<navigator open-type="navigate" url="/packageA/pages/productDateil/index?id={{ item.id }}" class="tui-pro-item" hover-class="hover" hover-start-time="150" >
-		<image src="{{ spliceImg.imgUrl(item.img) }}" class="tui-pro-img" mode="widthFix" />
+	<navigator open-type="navigate" url="/packageA/pages/productDateil/index?id={{ item.id }}" class="tui-pro-item tui-flex-list " hover-class="hover" hover-start-time="150" >
+		<image src="{{ spliceImg.imgUrl(item.img) }}" class="tui-pro-img tui-proimg-list" mode="widthFix" />
 		<view class="tui-pro-content">
 			<view class="tui-pro-tit">{{item.name}}</view>
 			<view>

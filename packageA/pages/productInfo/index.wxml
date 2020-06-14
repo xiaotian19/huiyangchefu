@@ -21,17 +21,17 @@
 <!-- 热门推荐 -->
 
 <!-- 无数据显示 -->
-	<view  class='noData' wx:else>
-	  <x-tips fixed="{{ false }}" imgUrl="/static/images/noData.png" >无商品数据~</x-tips>
-	</view>
+<view class='noData' wx:else>
+	<x-tips fixed="{{ false }}" imgUrl="/static/images/noData.png">无商品数据~</x-tips>
+</view>
 <!-- 无数据显示 -->
 
 
 <!--模板-->
 <template name="productItem">
 	<!--商品列表-->
-	<navigator open-type="navigate" url="{{ item.isUpgrade ? '':'/packageA/pages/productDateil/index?id='+item.id}}" class="tui-pro-item" hover-class="hover" hover-start-time="150" >
-		<image src="{{ spliceImg.imgUrl(item.img) }}" class="tui-pro-img" mode="widthFix" />
+	<navigator open-type="navigate" url="{{ item.isUpgrade ? '':'/packageA/pages/productDateil/index?id='+item.id}}" class="tui-pro-item tui-flex-list " hover-class="hover" hover-start-time="150">
+		<image src="{{ spliceImg.imgUrl(item.img) }}" class="tui-pro-img tui-proimg-list" mode="widthFix" />
 		<view class="tui-pro-content">
 			<view class="tui-pro-tit">{{item.name}}</view>
 			<view>

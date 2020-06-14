@@ -43,8 +43,6 @@ Component({
       }else{
         this.triggerEvent('click',this.data.list[index].text);
       }
-
-      
     }
   }
 })

@@ -65,14 +65,14 @@ var _config = {
    * 需要加载提示接口
    */
 
-  loading: ['couponList', 'myInviteOwner', 'alreadyVerification', 'getLocationReStores','getIncomeDetail','getTakeDetail','getOrderDetail','model'],
+  loading: ['couponList', 'myInviteOwner', 'alreadyVerification','getIncomeDetail','getTakeDetail','getOrderDetail','model','myCoupon','myInviteRepair'],
 
 
   /**
    * 需要验证登录接口
    */
 
-  isLogin: ['orderPayment', 'getCode'],
+  isLogin: ['orderPayment', 'getCode','myInviteOwner','getTakeDetail','myCoupon','getOrderDetail','alreadyVerification','getIncomeDetail','getStaffInfo','getRepairInfo'],
 
   /**
    * 首页导航配置
@@ -84,7 +84,7 @@ var _config = {
   }, {
     image: 'address', // 图标
     text: '保养门店', //名字
-    url: 'pages/index/index', //跳转路径
+    url: 'pages/store/index', //跳转路径
   }],
 
   /**

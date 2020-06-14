@@ -46,9 +46,6 @@ Page({
   getCouponList(typeId) {
     let self = this;
 
-    wx.showLoading({
-      title: '加载中',
-    })
     HTTP.httpGet('myCoupon',{typeId}).then((res) => {
       self.setData({
         couponList:res.rows

@@ -99,9 +99,6 @@ Page({
   getRepairInfo() {
     let self = this;
 
-    wx.showLoading({
-      title: '加载中',
-    })
 
     HTTP.httpGet('getRepairInfo').then(res => {
       res.rows[0].filedata = res.rows[0].filedata.split(',');
