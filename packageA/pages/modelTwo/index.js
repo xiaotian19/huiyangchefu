@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    listData: [],//商品数据
+    listData: [],// 商品数据
   },
 
   /**
