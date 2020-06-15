@@ -102,54 +102,60 @@
 
     submitPay() {
       var self = this;
+      let pro = self.data.detailInfo
 
-
-      // 验证是否登录
-      if (app.checkIsLogin()) return
-
-      HTTP.httpPost('orderPayment', {
-        id: self.data.detailInfo.id
-      },'正在支付').then(res => {
-        if (!res.rows) {
-          wx.hideLoading();
-          wx.showModal({
-            coutent: res.header.message,
-            confirmText: '重新支付',
-            success: res => {
-              if (res.confirm) {
-                // 重新发起支付
-                self.submitPay();
+      wx.showModal({
+        content: `您购买的保养券只能在${pro.province}-${pro.city}-${pro.district}内使用，是否确定购买`,
+        success:res=>{
+          if(res.confirm){
+      
+            HTTP.httpPost('orderPayment', {
+              id: self.data.detailInfo.id
+            },'正在支付').then(res => {
+              if (!res.rows) {
+                wx.hideLoading();
+                wx.showModal({
+                  coutent: res.header.message,
+                  confirmText: '重新支付',
+                  success: res => {
+                    if (res.confirm) {
+                      // 重新发起支付
+                      self.submitPay();
+                    }
+                  }
+                })
+                return
               }
-            }
-          })
-          return
-        }
-        wx.hideLoading();
-        let data = res.rows[0];
-        // 发起微信支付
-        wx.requestPayment({
-          nonceStr: data.nonceStr,
-          package: data.packageData,
-          paySign: data.paySign,
-          signType: data.signType,
-          timeStamp: data.timeStamp,
-          success: res => {
-            if (res.errMsg == 'requestPayment:ok') {
-              app.navigationTo('packageB/pages/paySuccess/index');
-            }
-          },
-          fail: res => {
-            if (res.errMsg == 'requestPayment:fail cancel') {
-              wx.showToast({
-                title: '支付已取消',
-                icon: "none"
+              wx.hideLoading();
+              let data = res.rows[0];
+              // 发起微信支付
+              wx.requestPayment({
+                nonceStr: data.nonceStr,
+                package: data.packageData,
+                paySign: data.paySign,
+                signType: data.signType,
+                timeStamp: data.timeStamp,
+                success: res => {
+                  if (res.errMsg == 'requestPayment:ok') {
+                    app.navigationTo('packageB/pages/paySuccess/index');
+                  }
+                },
+                fail: res => {
+                  if (res.errMsg == 'requestPayment:fail cancel') {
+                    wx.showToast({
+                      title: '支付已取消',
+                      icon: "none"
+                    })
+                  }
+                }
               })
-            }
+            }).catch(err=>{
+              console.log('支付发起失败----',err)
+            })
           }
-        })
-      }).catch(err=>{
-        console.log('支付发起失败----',err)
+        }
       })
+
     },
 
   })

@@ -29,7 +29,9 @@
 		<view class="tui-pro-titbox">
 			<view class="tui-pro-title">{{ detailInfo.name }}</view>
 		</view>
-
+		<view class="tui-pro-address">
+			<view>{{ detailInfo.province}}{{ detailInfo.city }}{{ detailInfo.district }}</view>
+		</view>
 	</view>
 
 	<view class="tui-nomore-box">
