@@ -143,7 +143,7 @@ App({
           // 发送用户信息
           HTTP.httpPost('login', {
             code: res.code,
-            nickName: '小天', //e.detail.userInfo.nickName,
+            nickName: e.detail.userInfo.nickName,
             headImg: e.detail.userInfo.avatarUrl,
             sn: wx.getStorageSync('invite') || ''
           }, '正在登录').then(res => {
