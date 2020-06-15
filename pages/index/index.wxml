@@ -2,7 +2,7 @@
 <wxs src='../../utils/wxs/money.wxs' module='money'></wxs>
 <!-- 定位最近门店 -->
 
-<view class="stores" wx:if='{{ stores.filedata !=  undefined }}'>
+<view class="stores" wx:if='{{ false }}'>
 	<image class="storeImg" src="{{ stores.filedata[0] }}"></image>
 	<view class="storeInfo">
 		<view class="title">{{ stores.name }}</view>
