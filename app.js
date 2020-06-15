@@ -8,6 +8,7 @@ const tabBarLinks = [
   "pages/center/index"
 ];
 
+
 let HTTP = require('utils/httpHelper.js');
 let config = require('utils/config.js').config
 
