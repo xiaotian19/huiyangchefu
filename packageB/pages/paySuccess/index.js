@@ -1,4 +1,4 @@
-// packageB/pages/paySuccess/index.js
+let app = getApp();
 Page({
 
   /**
@@ -17,7 +17,7 @@ Page({
 
   // 跳转到我的保养券
   onSkipMyCoupon(){
-    console.log('功能还没写')
+    app.navigationTo('packageB/pages/qrcode/index')
   },
 
   /**
