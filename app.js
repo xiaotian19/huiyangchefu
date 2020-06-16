@@ -18,7 +18,7 @@ App({
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch: function () {
-
+    this.checkIn();
   },
 
   /**
@@ -182,5 +182,24 @@ App({
       address: store.address
     })
   },
+
+/**
+ * 用户信息验证
+ */
+  checkIn(){
+    let self = this;
+
+    HTTP.httpGet('checkIn').then(res=>{
+       if(res.header.message == '用户不存在！'){
+         wx.removeStorageSync('token');
+          self.isLogin();
+       }else{
+          // 记录token 
+        wx.setStorageSync('token', res.rows[0].token);
+       }
+    }).catch(err=>{
+      console.log(err)
+    })
+  }
 
 })

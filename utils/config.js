@@ -53,6 +53,7 @@ var _config = {
     "getIncomeDetail":"/a_app_getIncomeList.action",//查询门店收入
     "getUpgradeCoupon":"/a_app_getChangeCoupon.action",//获取可置换的保养券
     "upgradeConpon":"/a_app_changeCoupon.action",//升级卡券
+    "checkIn":"/a_app_signIn.action",//确认账号状态
   },
   /**
    * 本地存储对像的KEY
