@@ -93,7 +93,7 @@ var _config = {
     text: '保养门店', //名字
     url: 'pages/store/index', //跳转路径
   }],[{
-    image: 'order', // 图标
+    image: 'scan', // 图标
     text: '立即核销', //名字
     url: 'packageB/pages/qrcode/index', //跳转路径
   }, {
