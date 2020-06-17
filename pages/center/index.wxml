@@ -32,7 +32,7 @@
 
 <!-- 地区经理 -->
 
-<content-card class="content" name="员工管理" wx:if='{{ userRole == 4 }}'>
+<content-card class="content" name="地区经理" wx:if='{{ userRole == 4 }}'>
 	<x-list title="{{ item.text }}" icon="yaopin" l-class-icon="iconfont" wx:for='{{ repair }}' wx:key='index' url='{{ item.url }}' data-index='{{ index }}' bind:lintap='repairTapType' />
 </content-card>
 

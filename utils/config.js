@@ -74,7 +74,7 @@ var _config = {
    * 需要验证登录接口
    */
 
-  isLogin: ['orderPayment', 'getCode','myInviteOwner','getTakeDetail','myCoupon','getOrderDetail','alreadyVerification','getIncomeDetail','getStaffInfo','getRepairInfo','getUserInfo'],
+  isLogin: ['orderPayment', 'getCode','myInviteOwner','getTakeDetail','myCoupon','getOrderDetail','alreadyVerification','getIncomeDetail','getStaffInfo','getRepairInfo','getUserInfo','region','userRepair','userRepair'],
 
   /**
    * 首页导航配置

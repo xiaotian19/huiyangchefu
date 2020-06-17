@@ -67,28 +67,14 @@ Page({
 
   },
 
-  submitInfo(e){
+  submitInfo(e) {
     let data = e.detail.value;
 
-    if(!app.checkIsLogin()){
-      wx.showModal({
-        content: '您还未登录，是否立即登录',
-        confirmText:'立即登录',
-        success:res=>{
-          if(res.confirm){
-            wx.navigateTo({
-              url: '/pages/login/login',
-            })
-          }
-        }
-      })
-      return
-    }
 
     if (verify.isNullOrEmpty(data.name)) {
       verify.toast('请输入姓名');
       return
-    } 
+    }
 
     if (verify.isNullOrEmpty(data.phone)) {
       verify.toast('请输入手机号码');
@@ -98,13 +84,25 @@ Page({
       return
     }
 
-    
+
     data.sn = this.sn || '';
-    HTTP.httpPost("userRepair",data).then(res=>{
-      if(!res.rows){
-        verify.toast('注册成功','successs');
-        app.navigationTo('pages/center/index');
+    HTTP.httpPost("userStaff", data).then(res => {
+      if (res.rows.length != 0) {
+        wx.setStorageSync('token', res.rows[0].token);
+        wx.showModal({
+          title: '温馨提示',
+          content: '注册成功',
+          confirmText: '知道了',
+          showCancel: false,
+          success: res => {
+            if (res.confirm) {
+              app.navigationTo('pages/center/index');
+            }
+          }
+        })
       }
+    }).catch(err => {
+      console.log('员工注册失败----', err)
     })
 
   },
