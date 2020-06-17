@@ -85,11 +85,11 @@ var _config = {
    * 首页导航配置
    */
   navList: [[{
-    image: 'order', // 图标
+    image: 'quan', // 图标
     text: '我的保养', //名字
     url: 'packageB/pages/qrcode/index', //跳转路径
   }, {
-    image: 'address', // 图标
+    image: 'dingwei', // 图标
     text: '保养门店', //名字
     url: 'pages/store/index', //跳转路径
   }],[{
@@ -97,7 +97,7 @@ var _config = {
     text: '立即核销', //名字
     url: 'packageB/pages/qrcode/index', //跳转路径
   }, {
-    image: 'address', // 图标
+    image: 'dingwei', // 图标
     text: '保养门店', //名字
     url: 'pages/store/index', //跳转路径
   }]],
@@ -106,23 +106,23 @@ var _config = {
    * 我的工具功能栏配置
    */
   navCar: [{
-    image: 'add', // 图标
+    image: 'yaoqinghaoyou', // 图标
     text: '邀请车主', //名字
     url: 'pages/index/index', //跳转路径
   }, {
-    image: 'user', // 图标
+    image: 'icon', // 图标
     text: '我的车主', //名字
     url: 'pages/index/index', //跳转路径
   }, {
-    image: 'comment', // 图标
+    image: 'yongjin', // 图标
     text: '我的佣金', //名字
     url: 'pages/index/index', //跳转路径
   }, {
-    image: 'order', // 图标
+    image: 'youhuiquan', // 图标
     text: '我的保养', //名字
     url: 'packageB/pages/qrcode/index', //跳转路径
   }, {
-    image: 'success', // 图标
+    image: 'iconfontgoumaihongbao', // 图标
     text: '购买记录', //名字
     url: 'packageB/pages/qrcode/index', //跳转路径
   }],
@@ -132,20 +132,26 @@ var _config = {
    */
 
   boos: [{
+    image: 'scan', // 图标
     text: '核销保养券', //名字
   }, {
+    image: 'lianluojilu', // 图标
     text: '我的核销', //名字
     url: "/packageB/pages/repairCoupon/index"
   }, {
+    image: 'qiandai', // 图标
     text: '门店收入', //名字
     url: "/packageB/pages/incomeDetail/index"
   }, {
+    image: 'xicon', // 图标
     text: '我的流水', //名字
     url: '/packageB/pages/incomeDetail/index'
   }, {
+    image: 'yuangongguanli', // 图标
     text: '我的员工', //名字
     url: "/packageB/pages/myStaff/index"
   }, {
+    image: 'mendian', // 图标
     text: '门店信息', //名字
     url: '/packageB/pages/storeInfo/index'
   }],
@@ -154,8 +160,10 @@ var _config = {
    * 地区经理工具栏配置
    */
   repair: [{
+    image:'assist',
     text: '邀请门店加入', //名字
   }, {
+    image:"lianluojilu",
     text: '我邀请的门店', //名字
     url: "/packageB/pages/myInviteRepair/index"
   }],
@@ -164,8 +172,10 @@ var _config = {
    * 员工工具栏配置
    */
   staff: [{
+    image:'scan',
     text: '核销保养券', //名字
   }, {
+    image:'lianluojilu',
     text: '我的核销', //名字
     url: "/packageB/pages/repairCoupon/index"
   }]
