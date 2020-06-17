@@ -6,7 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    staff:[],
+    staff: [],
+    codeSrc: '', //邀请二维码
+    role: '', //邀请注册身份
   },
 
   /**
@@ -68,20 +70,22 @@ Page({
    * 
    * @param {*} e 点击事件携带参数
    */
-  removeStaff(e){
+  removeStaff(e) {
     let self = this;
     wx.showModal({
       content: '是否确认删除当前员工',
-      success:res=>{
-        if(res.confirm){
-          HTTP.httpPost('removeStaff',{id:e.currentTarget.dataset.id},'正在删除').then(res=>{
-           wx.hideKeyboard();
+      success: res => {
+        if (res.confirm) {
+          HTTP.httpPost('removeStaff', {
+            id: e.currentTarget.dataset.id
+          }, '正在删除').then(res => {
+            wx.hideKeyboard();
             wx.showToast({
               title: '删除成功',
             })
             self.getStaffInfo();
-          }).catch(err=>{
-            console.log('员工删除失败----',err)
+          }).catch(err => {
+            console.log('员工删除失败----', err)
           })
         }
       }
@@ -93,15 +97,44 @@ Page({
    * 获取员工信息
    */
 
-   getStaffInfo(){
-     let self = this;
+  getStaffInfo() {
+    let self = this;
 
-     HTTP.httpGet('getStaffInfo').then(res=>{
-        self.setData({
-          staff:res.rows
-        })
-     }).catch(err=>{
-       console.log('我的员工信息获取失败----',err)
-     })
-   },
+    HTTP.httpGet('getStaffInfo').then(res => {
+      self.setData({
+        staff: res.rows
+      })
+    }).catch(err => {
+      console.log('我的员工信息获取失败----', err)
+    })
+  },
+
+  /**
+   * 获取邀请二维码
+   * @param {string} url  扫码跳转页面路径
+   * @param {string} role 邀请提示
+   */
+  getCode(url, role) {
+
+    let self = this;
+
+    HTTP.httpGet('getCode', {
+      pageUrl: url
+    }, '二维码生成中').then(res => {
+      self.setData({
+        codeSrc: res.rows[0].img,
+        role: role
+      })
+      wx.hideLoading()
+    }).catch(err => {
+      console.log('邀请车主二维码获取失败------', err)
+      wx.hideLoading()
+    })
+  },
+
+
+  getMyInviteCode(){
+    this.getCode('packageA/pages/userStaff/index','您正在邀请：员工')
+  },
+
 })

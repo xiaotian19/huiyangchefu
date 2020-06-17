@@ -23,7 +23,7 @@ var _config = {
 
   ApiUrl: {
     "login": "/a_app_login.action", //用户登录
-    "getUserInfo":"/a_app_getUserInfo.action",//获取用户信息
+    "getUserInfo": "/a_app_getUserInfo.action", //获取用户信息
     "swiperImg": "/a_app_getBannerList.action", //轮播图数据
     "orderPayment": "/a_app_wxPay.action", //微信支付
     "couponList": "/a_app_getCouponList.action", //获取保养券列表
@@ -48,12 +48,12 @@ var _config = {
     "myInviteOwner": "/a_app_getMyUserList.action", //查询自己邀请的车主
     "getLocationReStores": "/a_app_getFactoryList.action", //获取附件门店
     "removeStaff": "/a_app_deleteEmployee.action", //删除员工
-    "getOrderDetail":"/a_app_getPayList.action",//查询我的购买记录
-    "getTakeDetail":"/a_app_getRebateList.action",//佣金记录
-    "getIncomeDetail":"/a_app_getIncomeList.action",//查询门店收入
-    "getUpgradeCoupon":"/a_app_getChangeCoupon.action",//获取可置换的保养券
-    "upgradeConpon":"/a_app_changeCoupon.action",//升级卡券
-    "checkIn":"/a_app_signIn.action",//确认账号状态
+    "getOrderDetail": "/a_app_getPayList.action", //查询我的购买记录
+    "getTakeDetail": "/a_app_getRebateList.action", //佣金记录
+    "getIncomeDetail": "/a_app_getIncomeList.action", //查询门店收入
+    "getUpgradeCoupon": "/a_app_getChangeCoupon.action", //获取可置换的保养券
+    "upgradeConpon": "/a_app_changeCoupon.action", //升级卡券
+    "checkIn": "/a_app_signIn.action", //确认账号状态
   },
   /**
    * 本地存储对像的KEY
@@ -67,14 +67,14 @@ var _config = {
    * 需要加载提示接口
    */
 
-  loading: ['couponList', 'myInviteOwner', 'alreadyVerification','getIncomeDetail','getTakeDetail','getOrderDetail','model','myCoupon','myInviteRepair'],
+  loading: ['couponList', 'myInviteOwner', 'alreadyVerification', 'getIncomeDetail', 'getTakeDetail', 'getOrderDetail', 'model', 'myCoupon', 'myInviteRepair'],
 
 
   /**
    * 需要验证登录接口
    */
 
-  isLogin: ['orderPayment', 'getCode','myInviteOwner','getTakeDetail','myCoupon','getOrderDetail','alreadyVerification','getIncomeDetail','getStaffInfo','getRepairInfo','getUserInfo','region','userRepair','userRepair'],
+  isLogin: ['orderPayment', 'getCode', 'myInviteOwner', 'getTakeDetail', 'myCoupon', 'getOrderDetail', 'alreadyVerification', 'getIncomeDetail', 'getStaffInfo', 'getRepairInfo', 'getUserInfo', 'region', 'userRepair', 'userRepair'],
 
   /**
    * 首页导航配置
@@ -122,40 +122,40 @@ var _config = {
     text: '核销保养券', //名字
   }, {
     text: '我的核销', //名字
-    url:"/packageB/pages/repairCoupon/index"
-  },{
+    url: "/packageB/pages/repairCoupon/index"
+  }, {
     text: '门店收入', //名字
-    url:"/packageB/pages/incomeDetail/index"
+    url: "/packageB/pages/incomeDetail/index"
   }, {
     text: '我的流水', //名字
-    url:'/packageB/pages/incomeDetail/index'
+    url: '/packageB/pages/incomeDetail/index'
   }, {
     text: '我的员工', //名字
-    url:"/packageB/pages/myStaff/index"
+    url: "/packageB/pages/myStaff/index"
   }, {
     text: '门店信息', //名字
-    url:'/packageB/pages/storeInfo/index'
+    url: '/packageB/pages/storeInfo/index'
   }],
 
   /**
    * 地区经理工具栏配置
    */
-  repair:[{
+  repair: [{
     text: '邀请门店加入', //名字
   }, {
     text: '我邀请的门店', //名字
-    url:"/packageB/pages/myInviteRepair/index"
+    url: "/packageB/pages/myInviteRepair/index"
   }],
 
   /**
    * 员工工具栏配置
    */
-  staff:[{
+  staff: [{
     text: '核销保养券', //名字
   }, {
     text: '我的核销', //名字
-    url:"/packageB/pages/repairCoupon/index"
+    url: "/packageB/pages/repairCoupon/index"
   }]
-  
+
 }
 module.exports.config = _config;

@@ -11,7 +11,9 @@ Component({
     cardPadding: {
       type: Boolean,
       value: true
-    }
+    },
+    icon:Boolean,
+    isTitle:Boolean,
   },
 
   /**

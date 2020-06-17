@@ -108,7 +108,7 @@ Page({
     if (e.currentTarget.dataset.index == 0) {
       this.openCamera();
     }
-  },
+  }, 
 
   /**
    * 地区经理点击事件

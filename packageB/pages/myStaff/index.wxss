@@ -2,9 +2,13 @@ page{
   background-color: #f7f7f7;
 }
 
+.staff_view{
+  margin-top: 110rpx;
+}
+
 .staff{
   width: 90%;
-  margin: 0 auto;
+  margin:0 auto;
   padding: 10rpx 0;
   align-items: center;
   height: 100rpx;
@@ -55,3 +59,14 @@ page{
   margin-bottom: 80rpx;
 }
 
+.add_btn{
+  width: 150rpx;
+  height: 50rpx;
+  background-color: #5677FC;
+  line-height: 50rpx;
+  color: #fff;
+  font-size: 24rpx;
+  position: absolute;
+  top: 30rpx;
+  right: 20rpx;
+}
