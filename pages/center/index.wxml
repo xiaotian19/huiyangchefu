@@ -23,7 +23,6 @@
 
 <!-- boos -->
 
-<content-card class="content" cardPadding='{{ true }}' isTitle='{{ flase }}' wx:if='{{ userRole == 2 }}'>
 <content-card class="content" isTitle='{{ flase }}' wx:if='{{ userRole == 2 }}'>
 	<x-list title="{{ item.text }}" tapType='tap' icon="yaopin" l-class-icon="iconfont" wx:for='{{ boos }}' wx:key='index' icon='{{item.image}}' url='{{ item.url }}' data-index='{{ index }}'/>
 </content-card>
