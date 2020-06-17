@@ -9,11 +9,13 @@ Page({
    */
   data: {
     stores: {}, //距离最近的门店
-    list: navList, //首页导航
+    list: [], //首页导航
+    navList: navList, //首页导航栏信息
     imgUrls: [], //轮播图图片地址
     productList: [], //商品信息
     curTab: 1, //轮播图当前页索引标识
     position: wx.getStorageSync('districtSn'), //判断当前缓存里是否有位置信息
+    userRole: 0, //用户身份 2 门店 3门店员工 4 地区经理 
   },
 
   /**
@@ -45,7 +47,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // 获取用户信息
+    this.getUserInfo();
   },
 
   /**
@@ -81,6 +84,14 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  navListTap(e) {
+    if (e.detail.name === '立即核销') {
+      this.openCamera()
+    } else {
+      app.navigationTo(e.detail.url)
+    }
   },
 
   /**
@@ -246,8 +257,8 @@ Page({
   callPhone() {
     wx.makePhoneCall({
       phoneNumber: this.data.stores.phone,
-      fail:err=>{
-        console.log('拨打电话取消了',err)
+      fail: err => {
+        console.log('拨打电话取消了', err)
       }
     })
   },
@@ -258,6 +269,43 @@ Page({
    */
   navigation(e) {
     app.navigation(e.currentTarget.dataset.item);
+  },
+  /**
+   * 获取用户信息
+   */
+
+  getUserInfo() {
+    let self = this;
+
+    HTTP.httpGet('getUserInfo').then(res => {
+      if (res.rows.length > 0) {
+        if (res.rows[0].userType == 2 || res.rows[0].userType == 3) {
+          self.setData({
+            list: self.data.navList[1],
+          })
+        } else {
+          self.setData({
+            list: self.data.navList[0],
+          })
+        }
+      } else {
+        self.setData({
+          list: self.data.navList[0],
+        })
+      }
+    }).catch(err => {
+      console.log('获取用户信息失败---'.err)
+    })
+  },
+
+  //打开相机扫码
+  openCamera() {
+    wx.scanCode({
+      onlyFromCamera: true,
+      falil: err => {
+        console.log('打开扫码失败', err)
+      }
+    })
   },
 
 })

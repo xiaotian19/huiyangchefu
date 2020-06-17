@@ -74,18 +74,17 @@ var _config = {
    * 需要验证登录接口
    */
 
-  isLogin: ['orderPayment', 'getCode', 'myInviteOwner', 'getTakeDetail', 'myCoupon', 'getOrderDetail', 'alreadyVerification', 'getIncomeDetail', 'getStaffInfo', 'getRepairInfo', 'getUserInfo', 'region', 'userRepair', 'userRepair'],
-
+  isLogin: ['orderPayment', 'getCode', 'myInviteOwner', 'getTakeDetail', 'myCoupon', 'getOrderDetail', 'alreadyVerification', 'getIncomeDetail', 'getStaffInfo', 'getRepairInfo', 'region', 'userRepair', 'userRepair'],
 
   /**
    * 身份标识
    */
 
-    userRoleType:['车主','门店','员工','地区经理'],
+    userRoleType:['','车主','门店','员工','地区经理'],
   /**
    * 首页导航配置
    */
-  navList: [{
+  navList: [[{
     image: 'order', // 图标
     text: '我的保养', //名字
     url: 'packageB/pages/qrcode/index', //跳转路径
@@ -93,7 +92,15 @@ var _config = {
     image: 'address', // 图标
     text: '保养门店', //名字
     url: 'pages/store/index', //跳转路径
-  }],
+  }],[{
+    image: 'order', // 图标
+    text: '立即核销', //名字
+    url: 'packageB/pages/qrcode/index', //跳转路径
+  }, {
+    image: 'address', // 图标
+    text: '保养门店', //名字
+    url: 'pages/store/index', //跳转路径
+  }]],
 
   /**
    * 我的工具功能栏配置
@@ -115,7 +122,7 @@ var _config = {
     text: '我的保养', //名字
     url: 'packageB/pages/qrcode/index', //跳转路径
   }, {
-    image: 'order', // 图标
+    image: 'success', // 图标
     text: '购买记录', //名字
     url: 'packageB/pages/qrcode/index', //跳转路径
   }],

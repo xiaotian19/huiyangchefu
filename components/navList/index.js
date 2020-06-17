@@ -41,7 +41,7 @@ Component({
       if(this.data.tapType == 'url'){
         app.navigationTo(this.data.list[index].url);
       }else{
-        this.triggerEvent('click',this.data.list[index].text);
+        this.triggerEvent('click',{name:this.data.list[index].text,url:this.data.list[index].url});
       }
     }
   }

@@ -12,10 +12,10 @@ Page({
     boos: config.boos, //修理厂老板
     staff: config.staff, //员工
     repair: config.repair, //地区经理
-    myRole: config.userRoleType,//我的身份
+    myRole: config.userRoleType, //我的身份
     codeSrc: '', //邀请二维码
     role: '', //邀请注册身份
-    userRole:0,//用户身份 2 门店 3门店员工 4 地区经理 
+    userRole: 0, //用户身份 2 门店 3门店员工 4 地区经理 
   },
 
   /**
@@ -43,7 +43,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+
   },
 
   /**
@@ -109,7 +109,7 @@ Page({
     if (e.currentTarget.dataset.index == 0) {
       this.openCamera();
     }
-  }, 
+  },
 
   /**
    * 地区经理点击事件
@@ -171,17 +171,26 @@ Page({
    * 获取用户信息
    */
 
-  getUserInfo(){
+  getUserInfo() {
     let self = this;
-    
-    HTTP.httpGet('getUserInfo').then(res=>{
-      self.setData({
-        userRole:res.rows[0].userType,
-      })
-    }).catch(err=>{
+
+    HTTP.httpGet('getUserInfo').then(res => {
+      if (res.rows.length > 0) {
+        self.setData({
+          userRole: res.rows[0].userType,
+        })
+      }
+    }).catch(err => {
       console.log('获取用户信息失败---'.err)
     })
-  }
+  },
 
-
+  /**
+   * 点击登录
+   */
+  isLogin(){
+    if(this.data.userRole == 0){
+      app.isLogin();
+    }
+  },
 })

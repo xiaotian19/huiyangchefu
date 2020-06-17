@@ -91,6 +91,7 @@ function Post(url, data, loadingText) {
                 }
             },
             fail: err => {
+                console.log(err)
                 reject(err)
             },
             complete: (res) => {

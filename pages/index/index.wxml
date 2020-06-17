@@ -44,7 +44,7 @@
 <!-- 轮播图 -->
 
 <!-- 导航 -->
-<x-nav list='{{ list }}' listNumber='{{ 2 }}' tapType='url'></x-nav>
+<x-nav list='{{ list }}' listNumber='{{ 2 }}' tapType='tap' bindclick='navListTap'></x-nav>
 <!-- 导航 -->
 
 <!-- 搜索框 -->
