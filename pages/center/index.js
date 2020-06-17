@@ -12,6 +12,7 @@ Page({
     boos: config.boos, //修理厂老板
     staff: config.staff, //员工
     repair: config.repair, //地区经理
+    myRole: config.userRoleType,//我的身份
     codeSrc: '', //邀请二维码
     role: '', //邀请注册身份
     userRole:0,//用户身份 2 门店 3门店员工 4 地区经理 
@@ -175,7 +176,7 @@ Page({
     
     HTTP.httpGet('getUserInfo').then(res=>{
       self.setData({
-        userRole:res.rows[0].userType
+        userRole:res.rows[0].userType,
       })
     }).catch(err=>{
       console.log('获取用户信息失败---'.err)

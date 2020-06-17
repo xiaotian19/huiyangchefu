@@ -76,6 +76,12 @@ var _config = {
 
   isLogin: ['orderPayment', 'getCode', 'myInviteOwner', 'getTakeDetail', 'myCoupon', 'getOrderDetail', 'alreadyVerification', 'getIncomeDetail', 'getStaffInfo', 'getRepairInfo', 'getUserInfo', 'region', 'userRepair', 'userRepair'],
 
+
+  /**
+   * 身份标识
+   */
+
+    userRoleType:['车主','门店','员工','地区经理'],
   /**
    * 首页导航配置
    */
