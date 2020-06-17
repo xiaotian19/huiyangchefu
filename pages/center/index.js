@@ -103,15 +103,6 @@ Page({
   },
 
   /**
-   * 老板工具栏点击跳转
-   */
-  boosTapType(e) {
-    if (e.currentTarget.dataset.index == 0) {
-      this.openCamera();
-    }
-  },
-
-  /**
    * 地区经理点击事件
    */
   repairTapType(e) {
@@ -120,15 +111,6 @@ Page({
     }
   },
 
-
-  /**
-   * 员工点击事件
-   */
-  staffTapType(e) {
-    if (e.currentTarget.dataset.index == 0) {
-      this.openCamera();
-    }
-  },
 
   //打开相机扫码
   openCamera() {
