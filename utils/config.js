@@ -132,9 +132,6 @@ var _config = {
    */
 
   boos: [{
-    image: 'scan', // 图标
-    text: '核销保养券', //名字
-  }, {
     image: 'lianluojilu', // 图标
     text: '我的核销', //名字
     url: "/packageB/pages/repairCoupon/index"
@@ -172,9 +169,6 @@ var _config = {
    * 员工工具栏配置
    */
   staff: [{
-    image:'scan',
-    text: '核销保养券', //名字
-  }, {
     image:'lianluojilu',
     text: '我的核销', //名字
     url: "/packageB/pages/repairCoupon/index"
