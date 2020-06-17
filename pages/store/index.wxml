@@ -6,19 +6,19 @@
 			<view class="storeInfo_title flex_nowrap">
 				<view class="storeInfo_title_name">{{ item.name }}</view>
 				<view class="storeInfo_title_nav flex_nowrap" bindtap="navigation" data-item="{{ item }}">
-					<x-icon name='address' size="40"></x-icon>
+					<x-icon name='dingwei' size="40"></x-icon>
 					<view>导航</view>
 				</view>
 			</view>
 			<view class="storeInfo_tell flex_nowrap">
 				<view class="flex_nowrap"  bindtap="callPhone" data-phone="{{ item.phone }}">
-					<x-icon name='phone' size="40"></x-icon>
+					<x-icon name='dianhua' size="40"></x-icon>
 					<view class="_tell">{{ item.phone }}</view>
 				</view>
 				<view class="_distance">距您当前位置：{{ item.distance <= 1000? item.distance+'米': item.distance/1000 + '千米' }}</view>
 			</view>
 			<view class="storeInfo_address flex_nowrap">
-				<x-icon name='address' size="40"></x-icon>
+				<x-icon name='dingwei' size="40"></x-icon>
 				<view>{{ item.address }}</view>
 			</view>
 			<view class="storeInfo flex_nowrap">
