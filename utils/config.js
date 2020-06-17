@@ -118,11 +118,11 @@ var _config = {
     text: '我的佣金', //名字
     url: 'pages/index/index', //跳转路径
   }, {
-    image: 'youhuiquan', // 图标
+    image: 'quan1', // 图标
     text: '我的保养', //名字
     url: 'packageB/pages/qrcode/index', //跳转路径
   }, {
-    image: 'iconfontgoumaihongbao', // 图标
+    image: 'jilu', // 图标
     text: '购买记录', //名字
     url: 'packageB/pages/qrcode/index', //跳转路径
   }],
@@ -141,7 +141,7 @@ var _config = {
     url: "/packageB/pages/incomeDetail/index"
   }, {
     image: 'xicon', // 图标
-    text: '我的流水', //名字
+    text: '账单记录', //名字
     url: '/packageB/pages/incomeDetail/index'
   }, {
     image: 'yuangongguanli', // 图标
