@@ -23,7 +23,7 @@ Page({
    */
   onLoad: function (options) {
     // 获取轮播图信息
-    this.GetSwiperImg();
+    this.GetSwiperImg(wx.getStorageSync('districtSn'));
     // 获取当前位置
     this.onGetChooseLocation();
     // 获取保养券信息
@@ -109,10 +109,10 @@ Page({
    * 轮播图数据
    */
 
-  GetSwiperImg() {
+  GetSwiperImg(districtSn) {
     let self = this;
 
-    HTTP.httpGet('swiperImg').then(res => {
+    HTTP.httpGet('swiperImg',{areaSn:districtSn}).then(res => {
       self.setData({
         imgUrls: res.rows
       })
@@ -140,7 +140,10 @@ Page({
           if (res.rows) {
             // 缓存当前区号
             wx.setStorageSync('districtSn', res.rows[0].districtSn);
+            // 获取卡券
             self.getCouponInfo();
+            // 获取轮播图
+            self.GetSwiperImg(res.rows[0].districtSn);
             self.setData({
               position: res.rows[0].districtSn
             })
