@@ -139,11 +139,7 @@ var _config = {
     image: 'qiandai', // 图标
     text: '门店收入', //名字
     url: "/packageB/pages/incomeDetail/index"
-  }, {
-    image: 'xicon', // 图标
-    text: '账单记录', //名字
-    url: '/packageB/pages/incomeDetail/index'
-  }, {
+  },{
     image: 'yuangongguanli', // 图标
     text: '我的员工', //名字
     url: "/packageB/pages/myStaff/index"
