@@ -87,7 +87,7 @@ Page({
   },
 
   navListTap(e) {
-    if (e.detail.name === '立即核销') {
+    if (e.detail.text === '立即核销') {
       this.openCamera()
     } else {
       app.navigationTo(e.detail.url)

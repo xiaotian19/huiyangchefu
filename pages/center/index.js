@@ -79,8 +79,8 @@ Page({
    */
 
   navTapType(e) {
-    
-    switch (e.detail.name) {
+
+    switch (e.detail.text) {
       case '邀请车主':
         this.getCode("pages/index/index", '你正在邀请：车主');
         break
