@@ -18,6 +18,7 @@ App({
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch: function (options) {
+    console.log(options)
     this.checkIn();
     // 缓存邀请人id
     if (Object.keys(options.query).length != 0) {
