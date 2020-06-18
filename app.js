@@ -17,8 +17,13 @@ App({
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
-  onLaunch: function () {
+  onLaunch: function (options) {
+    console.log(options)
     this.checkIn();
+    // 缓存邀请人id
+    if (Object.keys(options.query).length != 0) {
+      wx.setStorageSync('invite', options.query.scene);
+    }
   },
 
   /**
@@ -183,21 +188,21 @@ App({
     })
   },
 
-/**
- * 用户信息验证
- */
-  checkIn(){
+  /**
+   * 用户信息验证
+   */
+  checkIn() {
     let self = this;
 
-    HTTP.httpGet('checkIn').then(res=>{
-       if(res.header.message == '用户不存在！'){
-         wx.removeStorageSync('token');
-          self.isLogin();
-       }else{
-          // 记录token 
+    HTTP.httpGet('checkIn').then(res => {
+      if (res.header.message == '用户不存在！') {
+        wx.removeStorageSync('token');
+        self.isLogin();
+      } else {
+        // 记录token 
         wx.setStorageSync('token', res.rows[0].token);
-       }
-    }).catch(err=>{
+      }
+    }).catch(err => {
       console.log(err)
     })
   }

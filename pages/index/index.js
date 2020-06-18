@@ -28,11 +28,6 @@ Page({
     this.onGetChooseLocation();
     // 获取保养券信息
     this.getCouponInfo();
-    // 缓存邀请人id
-    if (options.sn) {
-      wx.setStorageSync('invite', options.sn);
-    }
-
   },
 
 
