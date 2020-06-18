@@ -13,8 +13,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getCoupon(options.sn);
-    this.sn = options.sn;
+    this.getCoupon(options.scene);
+    this.sn = options.scene;
   },
 
   /**
@@ -71,14 +71,14 @@ Page({
    * @param {string} sn 核销二维码编号
    */ 
 
-  getCoupon(sn){
+  getCoupon(scene){
     let self = this;
 
     wx.showLoading({
       title: '加载中',
     })
 
-    HTTP.httpGet('getVerificationCoupon',{sn}).then((res) => {
+    HTTP.httpGet('getVerificationCoupon',{sn:scene}).then((res) => {
       wx.hideLoading()
       self.setData({
         couponList:res.rows[0]
