@@ -189,7 +189,6 @@ Page({
 
     wx.openSetting({
       success(res) {
-        console.log(res)
         if (res.authSetting['scope.userLocation']) {
           // 获取位置
           self.getPosition()
