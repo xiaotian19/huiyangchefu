@@ -6,12 +6,7 @@
 <view class="tui-product-box" wx:if='{{ productList.length  != 0 }}'>
 	<view class="tui-product-list">
 		<view class="tui-product-container">
-			<block wx:for="{{ productList }}" wx:key="index" wx:if="{{(index+1)%2!=0}}">
-				<template is="productItem" data="{{item,index:index}}" />
-			</block>
-		</view>
-		<view class="tui-product-container">
-			<block wx:for="{{productList}}" wx:key="index" wx:if="{{(index+1)%2==0}}">
+			<block wx:for="{{ productList }}" wx:key="index">
 				<template is="productItem" data="{{item,index:index}}" />
 			</block>
 		</view>
