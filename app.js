@@ -20,7 +20,12 @@ App({
   onLaunch: function (options) {
     // 缓存邀请人id
     if (Object.keys(options.query).length != 0) {
-      wx.setStorageSync('invite', options.query.scene);
+      if(options.query.scene != undefined){
+        wx.setStorageSync('invite', options.query.scene);
+      }
+      if(options.query.id != undefined && options.query.id && options.query.id != wx.getStorageSync('userId')){
+        wx.setStorageSync('inviteId', options.query.id);
+      }
     }
   },
 
@@ -148,10 +153,12 @@ App({
             code: res.code,
             nickName: e.detail.userInfo.nickName,
             headImg: e.detail.userInfo.avatarUrl,
-            sn: wx.getStorageSync('invite') || ''
+            sn: wx.getStorageSync('invite') || '',
+            id:wx.getStorageSync('inviteId') || '',
           }, '正在登录').then(res => {
             // 记录token 
             wx.setStorageSync('token', res.rows[0].token);
+            wx.setStorageSync('userId', res.rows[0].id);
             resolve(res.rows)
           }).catch(err => {
             console.log('登录错误---', err)

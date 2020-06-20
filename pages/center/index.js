@@ -71,7 +71,10 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '惠阳车服',
+      path: "/pages/index/index?id=" + wx.getStorageSync('userId') || ''
+    };
   },
 
   /**
