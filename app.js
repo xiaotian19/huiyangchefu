@@ -18,15 +18,7 @@ App({
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch: function (options) {
-    // 缓存邀请人id
-    if (Object.keys(options.query).length != 0) {
-      if(options.query.scene != undefined){
-        wx.setStorageSync('invite', options.query.scene);
-      }
-      if(options.query.id != undefined && options.query.id && options.query.id != wx.getStorageSync('userId')){
-        wx.setStorageSync('inviteId', options.query.id);
-      }
-    }
+
   },
 
   /**
@@ -34,6 +26,16 @@ App({
    */
   onShow: function (options) {
     this.checkIn();
+    // 缓存邀请人id
+    if (Object.keys(options.query).length != 0) {
+      if (options.query.scene != undefined) {
+        wx.setStorageSync('invite', options.query.scene);
+      }
+      if (options.query.id != undefined && options.query.id && options.query.id != wx.getStorageSync('userId')) {
+        console.log(options.query)
+        wx.setStorageSync('inviteId', options.query.id);
+      }
+    }
   },
 
   /**
@@ -154,11 +156,12 @@ App({
             nickName: e.detail.userInfo.nickName,
             headImg: e.detail.userInfo.avatarUrl,
             sn: wx.getStorageSync('invite') || '',
-            id:wx.getStorageSync('inviteId') || '',
+            id: wx.getStorageSync('inviteId') || '',
           }, '正在登录').then(res => {
             // 记录token 
             wx.setStorageSync('token', res.rows[0].token);
             wx.setStorageSync('userId', res.rows[0].id);
+            wx.removeStorageSync('inviteId');
             resolve(res.rows)
           }).catch(err => {
             console.log('登录错误---', err)

@@ -62,12 +62,6 @@ Page({
     }
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
 
   /**
    * 获取邀请信息

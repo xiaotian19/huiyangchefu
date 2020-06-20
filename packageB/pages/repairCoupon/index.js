@@ -60,13 +60,7 @@ Page({
     this.getCouponList(tabIndex,this.data.page);
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
+ 
   /**
    * 选项卡切换
    * @param {object} e 组件抛出事件
