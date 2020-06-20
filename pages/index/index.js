@@ -79,7 +79,7 @@ Page({
    */
   onShareAppMessage: function (e) {
     return {
-      title: '惠阳车服',
+      title: '惠养车服',
       path: "/pages/index/index?id=" + wx.getStorageSync('userId') || ''
     };
   },
