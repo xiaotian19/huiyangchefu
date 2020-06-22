@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    couponList:{}
+    couponList:[]
   },
 
   /**
@@ -69,14 +69,10 @@ Page({
   getCoupon(scene){
     let self = this;
 
-    wx.showLoading({
-      title: '加载中',
-    })
-
     HTTP.httpGet('getVerificationCoupon',{sn:scene}).then((res) => {
       wx.hideLoading()
       self.setData({
-        couponList:res.rows[0]
+        couponList:res.rows
       })
     }).catch(err=>{
       wx.hideLoading()
@@ -90,7 +86,7 @@ Page({
    * 核销取消
    */
   onCallBack(){
-    app.navigationTo('pages/center/index');
+    app.navigationTo('pages/index/index');
   },
 
 

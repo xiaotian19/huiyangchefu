@@ -67,7 +67,7 @@ var _config = {
    * 需要加载提示接口
    */
 
-  loading: ['couponList', 'myInviteOwner', 'alreadyVerification', 'getIncomeDetail', 'getTakeDetail', 'getOrderDetail', 'model', 'myCoupon', 'myInviteRepair'],
+  loading: ['couponList', 'myInviteOwner', 'alreadyVerification', 'getIncomeDetail', 'getTakeDetail', 'getOrderDetail', 'model', 'myCoupon', 'myInviteRepair','getVerificationCoupon'],
 
 
   /**

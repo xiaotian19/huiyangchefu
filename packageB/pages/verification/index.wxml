@@ -1,30 +1,34 @@
 <wxs src='../../../utils/wxs/imgUrl.wxs' module='spliceImg'></wxs>
 <wxs src='../../../utils/wxs/money.wxs' module='money'></wxs>
 
-<view class="success_view" wx:if='{{ couponList }}'>
+<view class="success_view">
 
-	<view class="hidden-box">
+	<view class="hidden-box" wx:if='{{ couponList.length != 0 }}'>
 
 		<view class="qrcode-box">
 
-			<image style="width:100%;" src="{{ spliceImg.imgUrl(couponList.img) }}" mode='widthFix'></image>
+			<image style="width:100%;" src="{{ spliceImg.imgUrl(couponList[0].img) }}" mode='widthFix'></image>
 
 		</view>
 
 		<view class="list-item">
 			<view class="item-tit">价格：</view>
-			<view class="item-con">￥{{ money.Format(couponList.payment,2)}}</view>
+			<view class="item-con">￥{{ money.Format(couponList[0].payment,2)}}</view>
 		</view>
 		<view class="list-item">
 			<view class="item-tit">适用地区</view>
-			<view class="item-con">{{couponList.province}} {{ couponList.city }} {{ couponList.district }}</view>
+			<view class="item-con">{{couponList[0].province}} {{ couponList[0].city }} {{ couponList[0].district }}</view>
 		</view>
 	</view>
 
 
 
-	<view class="success_view_but flex_nowrap">
+	<view class="success_view_but flex_nowrap" wx:if='{{ couponList.length != 0 }}'>
 		<button class="success_btn" bindtap="onCallBack">取消</button>
 		<button class="success_btn" bindtap="tapVerificationCoupon">确定核销</button>
+	</view>
+
+	<view class="success_view_but flex_nowrap" wx:else>
+		<button class="success_btn" bindtap="onCallBack">返回首页</button>
 	</view>
 </view>

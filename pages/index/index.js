@@ -300,12 +300,19 @@ Page({
 
   //打开相机扫码
   openCamera() {
+    if(app.checkIsLogin())return
     wx.scanCode({
       onlyFromCamera: true,
+      success:res=>{
+        if(res.path){
+          wx.redirectTo({
+            url:'/' + res.path
+          })
+        }
+      },
       falil: err => {
         console.log('打开扫码失败', err)
       }
     })
   },
-
 })

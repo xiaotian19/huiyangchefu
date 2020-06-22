@@ -114,20 +114,6 @@ Page({
     }
   },
 
-
-  //打开相机扫码
-  openCamera() {
-    wx.scanCode({
-      onlyFromCamera: true,
-      falil: err => {
-        console.log('打开扫码失败', err)
-      }
-    })
-  },
-
-
-
-
   /**
    * 获取邀请二维码
    * @param {string} url  扫码跳转页面路径
