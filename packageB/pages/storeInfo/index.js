@@ -47,8 +47,6 @@ Page({
    */
   onLoad: function (options) {
     wx.lin.initValidateForm(this);
-    // 查询门店信息
-    this.getRepairInfo();
   },
 
   /**
@@ -62,7 +60,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // 查询门店信息
+    this.getRepairInfo();
   },
 
   /**
@@ -103,7 +102,7 @@ Page({
 
     HTTP.httpGet('getRepairInfo').then(res => {
       res.rows[0].filedata = res.rows[0].filedata.split(',');
-      console.log(res.rows[0])
+
       res.rows[0].filedata = res.rows[0].filedata.map((item) => {
         wx.hideLoading();
         if (item.indexOf('https') === -1 ) {
@@ -302,7 +301,6 @@ Page({
    * @param {object} img 上传图片携带对象
    */
   addImgUrl(img) {
-    console.log(img)
     this.setData({
       ['store.filedata']: img.detail.all
     })
