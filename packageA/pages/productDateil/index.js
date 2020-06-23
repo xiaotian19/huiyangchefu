@@ -99,7 +99,7 @@
       let pro = self.data.detailInfo
 
       wx.showModal({
-        content: `您购买的保养券只能在${pro.province}-${pro.city}-${pro.district}内使用，是否确定购买`,
+        content: `您购买的保养券只能在${pro.province}-${pro.city}-${pro.district}内使用，是否确定购买？`,
         success:res=>{
           if(res.confirm){
       
