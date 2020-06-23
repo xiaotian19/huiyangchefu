@@ -58,6 +58,10 @@ Component({
     maxImageSize: {
       type: Number,
       value: 10000000,
+    },
+    showBtn:{
+      type:Boolean,
+      value:true
     }
   },
 
@@ -65,7 +69,6 @@ Component({
    * 组件的初始数据
    */
   data: {
-    showBtn: true,
     tempFilePath: '',
   },
 

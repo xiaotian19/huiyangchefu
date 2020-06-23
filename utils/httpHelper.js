@@ -114,7 +114,7 @@ function Post(url, data, loadingText) {
 /**
  * 批量上传
  */
-function BatchUpload(url, files, data, cb) {
+function BatchUpload(url, files, data, cb,fail) {
     var successUp = 0; //成功个数
     var failUp = 0; //失败个数
     var length = files.length; //总共个数
@@ -122,7 +122,7 @@ function BatchUpload(url, files, data, cb) {
     var _uploadFileStr = new Array();
     url = config.ApiUrl[url];
     if (files && files.length > 0) {
-        SingleUpload(url, files, successUp, failUp, i, length, data, cb, _uploadFileStr);
+        SingleUpload(url, files, successUp, failUp, i, length, data, cb,fail,_uploadFileStr);
     } else {
         typeof cb == "function" && cb(files, "");
     }
@@ -140,7 +140,7 @@ function BatchUpload(url, files, data, cb) {
  *  cb 回调函数
  */
 function SingleUpload(url, filePaths, successUp, failUp, i, length, data, cb, fail, _uploadFileStr) {
-
+    console.log(_uploadFileStr.length)
     wx.uploadFile({
         url: getHost() + url,
         filePath: filePaths[i],
@@ -180,7 +180,7 @@ function SingleUpload(url, filePaths, successUp, failUp, i, length, data, cb, fa
                     }
                     typeof cb == "function" && cb(_uploadFileStr, "");
                 } else { //递归调用uploadDIY函数
-                    SingleUpload(url, filePaths, successUp, failUp, i, length, data, cb, _uploadFileStr);
+                    SingleUpload(url, filePaths, successUp, failUp, i, length, data, cb, fail,_uploadFileStr);
                 }
             }
         },

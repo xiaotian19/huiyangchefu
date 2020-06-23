@@ -1,4 +1,7 @@
 let HTTP = require('../../../utils/httpHelper.js');
+const {
+  httpGet
+} = require('../../../utils/httpHelper.js');
 let config = require('../../../utils/config.js').config;
 let app = getApp();
 
@@ -33,6 +36,9 @@ Page({
     },
     store: {}, //门店信息
     srartSubmit: false, //是否开始提交
+    latitude:0,//纬度
+    longitude:0,//经度,
+    showBtn:false,//是否显示图片增加
   },
 
 
@@ -41,6 +47,7 @@ Page({
    */
   onLoad: function (options) {
     wx.lin.initValidateForm(this);
+    // 查询门店信息
     this.getRepairInfo();
   },
 
@@ -96,9 +103,10 @@ Page({
 
     HTTP.httpGet('getRepairInfo').then(res => {
       res.rows[0].filedata = res.rows[0].filedata.split(',');
+      console.log(res.rows[0])
       res.rows[0].filedata = res.rows[0].filedata.map((item) => {
-          wx.hideLoading();
-        if (/(http|https):\/\/([\w.]+\/?)\S*/.test(item.url)) {
+        wx.hideLoading();
+        if (item.indexOf('https') === -1 ) {
           return {
             url: config.HttpRequest + '/' + item
           }
@@ -108,14 +116,56 @@ Page({
           }
         }
       })
+      if (!res.rows[0].address) {
+        this.GetStoreAddress();
+      }
       self.setData({
-        store: res.rows[0]
+        store: res.rows[0],
+        showBtn:res.rows[0].filedata.length < 3?true:false
       })
     }).catch(err => {
       console.log(err)
     })
   },
 
+
+  /**
+   * 获取门店地址
+   */
+
+  GetStoreAddress() {
+    let self = this;
+
+    self.getLocation().then(position => {
+      if (!wx.getStorageSync('districtSn') || Object.keys(position).length == 0) {
+        wx.showModal({
+          content: '定位功能未授权,是否立即去首页授权',
+          showCancel: false,
+          confirmText: '知道了',
+          success: res => {
+            if (res.confirm) {
+              app.navigationTo('pages/index/index');
+            }
+          }
+        })
+        return
+      }
+
+      HTTP.httpGet('getPosition', {
+        latitude: position.latitude,
+        longitude: position.longitude
+      }).then(res => {
+        console.log(res)
+        let store = this.data.store;
+        store.address = res.rows[0].address;
+        self.setData({
+          store,
+          latitude: position.latitude,
+          longitude: position.longitude
+        })
+      })
+    })
+  },
 
   /**
    * 提交信息
@@ -140,33 +190,33 @@ Page({
 
 
     (async function () {
-      await self.getLocation().then(res => {
-        if (!wx.getStorageSync('districtSn') || Object.keys(res).length == 0) {
-          wx.showModal({
-            content: '定位功能未授权,是否立即去首页授权',
-            showCancel: false,
-            confirmText: '知道了',
-            success: res => {
-              if (res.confirm) {
-                app.navigationTo('pages/index/index');
-              }
+      
+      if (!wx.getStorageSync('districtSn')) {
+        wx.showModal({
+          content: '定位功能未授权,是否立即去首页授权',
+          showCancel: false,
+          confirmText: '知道了',
+          success: res => {
+            if (res.confirm) {
+              app.navigationTo('pages/index/index');
             }
-          })
-          return
-        }
+          }
+        })
+        return
+      }
 
+      await self.getLocation().then(res => {
 
-        data.values.latitude = res.latitude;
-        data.values.longitude = res.longitude;
+        data.values.latitude = self.data.latitude || res.latitude;//纬度  
+        data.values.longitude = self.data.longitude || res.longitude;//经度
 
-        let newArr = _images.filter(item => !/(http|https):\/\/([\w.]+\/?)\S*/.test(item.url)).map((item) => {
+        let newArr = _images.filter(item => !/(https):\/\/([\w.]+\/?)\S*/.test(item.url)).map((item) => {
           return item.url
         })
 
-        let oldarr = _images.filter(item => /(http|https):\/\/([\w.]+\/?)\S*/.test(item.url)).map((item) => {
+        let oldarr = _images.filter(item => /(https):\/\/([\w.]+\/?)\S*/.test(item.url)).map((item) => {
           return item.url
         })
-
 
         if (!self.data.srartSubmit) {
 
@@ -184,8 +234,8 @@ Page({
             if (imgResp.length == newArr.length) {
 
               data.values.filedata = [...imgResp, ...oldarr];
-
-              HTTP.httpPost('setRepairInfo', data.values,'正在保存数据').then(res => {
+             
+              HTTP.httpPost('setRepairInfo', data.values, '正在保存数据').then(res => {
                 wx.hideLoading()
                 wx.showModal({
                   content: '提交成功',
@@ -252,6 +302,7 @@ Page({
    * @param {object} img 上传图片携带对象
    */
   addImgUrl(img) {
+    console.log(img)
     this.setData({
       ['store.filedata']: img.detail.all
     })

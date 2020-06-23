@@ -40,7 +40,7 @@
 
 		<x-form-item label='联系电话' name='phone' l-form-label-class='label_text' tip-type='message' rules='{{ phoneRules }}' align-items='center' label-width='300'>
 
-			<x-input l-class="l-input-container-class" id="phone" value="{{ store.phone }}" hide-label placeholder="请输入联系电话" type="text" tipType="message" maxlength='{{ 11 }}'/>
+			<x-input l-class="l-input-container-class" id="phone" value="{{ store.phone }}" hide-label placeholder="请输入联系电话" type="text" tipType="message" maxlength='{{ 11 }}' />
 
 		</x-form-item>
 
@@ -52,18 +52,18 @@
 
 		</x-form-item>
 
-
-		<x-form-item name='profile' tip-type='message' labelWidth='0' l-form-item-class='form_item' rules='{{ profileRules }}' >
+<!-- 
+		<x-form-item name='profile' tip-type='message' labelWidth='0' l-form-item-class='form_item' rules='{{ profileRules }}' wx:if='{{ false }}'>
 			<content-card class="content" name="门店简介">
 
 				<x-textarea l-class="textarea-class" placeholder="尽情展示自己..." tipType="message" rules="{{ userRules }}" id='profile' auto-height='{{ true }}' maxlength='{{ 300 }}' value="{{ store.profile }}" />
 
 			</content-card>
 
-		</x-form-item>
+		</x-form-item> -->
 
 		<content-card class="content" name="上传门店照片">
-			<x-image-picker urls="{{ store.filedata }}" count="3" size="3" preview='{{ true }}' bind:linchange='addImgUrl' bind:linremove='removeImgUrl'/>
+			<x-image-picker urls="{{ store.filedata }}" count="3" size="3" preview='{{ true }}' bind:linchange='addImgUrl' bind:linremove='removeImgUrl' showBtn='{{ showBtn }}'/>
 		</content-card>
 
 		<view class="content" slot='submit'>
