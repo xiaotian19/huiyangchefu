@@ -36,9 +36,9 @@ Page({
     },
     store: {}, //门店信息
     srartSubmit: false, //是否开始提交
-    latitude:0,//纬度
-    longitude:0,//经度,
-    showBtn:false,//是否显示图片增加
+    latitude: 0, //纬度
+    longitude: 0, //经度,
+    showBtn: false, //是否显示图片增加
   },
 
 
@@ -47,6 +47,8 @@ Page({
    */
   onLoad: function (options) {
     wx.lin.initValidateForm(this);
+    // 查询门店信息
+    this.getRepairInfo();
   },
 
   /**
@@ -60,8 +62,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // 查询门店信息
-    this.getRepairInfo();
+
   },
 
   /**
@@ -105,7 +106,7 @@ Page({
 
       res.rows[0].filedata = res.rows[0].filedata.map((item) => {
         wx.hideLoading();
-        if (item.indexOf('https') === -1 ) {
+        if (item.indexOf('https') === -1) {
           return {
             url: config.HttpRequest + '/' + item
           }
@@ -120,7 +121,7 @@ Page({
       }
       self.setData({
         store: res.rows[0],
-        showBtn:res.rows[0].filedata.length < 3?true:false
+        showBtn: res.rows[0].filedata.length < 3 ? true : false
       })
     }).catch(err => {
       console.log(err)
@@ -189,7 +190,7 @@ Page({
 
 
     (async function () {
-      
+
       if (!wx.getStorageSync('districtSn')) {
         wx.showModal({
           content: '定位功能未授权,是否立即去首页授权',
@@ -206,8 +207,8 @@ Page({
 
       await self.getLocation().then(res => {
 
-        data.values.latitude = self.data.latitude || res.latitude;//纬度  
-        data.values.longitude = self.data.longitude || res.longitude;//经度
+        data.values.latitude = self.data.latitude || res.latitude; //纬度  
+        data.values.longitude = self.data.longitude || res.longitude; //经度
 
         let newArr = _images.filter(item => !/(https):\/\/([\w.]+\/?)\S*/.test(item.url)).map((item) => {
           return item.url
@@ -233,7 +234,7 @@ Page({
             if (imgResp.length == newArr.length) {
 
               data.values.filedata = [...imgResp, ...oldarr];
-             
+
               HTTP.httpPost('setRepairInfo', data.values, '正在保存数据').then(res => {
                 wx.hideLoading()
                 wx.showModal({
