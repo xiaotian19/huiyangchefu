@@ -72,7 +72,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '惠养车服',
+      title: '让有车一族进入 无忧养车时代',
       path: "/pages/index/index?id=" + wx.getStorageSync('userId') || ''
     };
   },
