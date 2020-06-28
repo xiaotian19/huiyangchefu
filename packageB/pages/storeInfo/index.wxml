@@ -64,12 +64,11 @@
 		</x-form-item> -->
 
 		<content-card class="content" name="上传门店照片">
-			<x-image-picker urls="{{ store.filedata }}" count="3" size="3" preview='{{ true }}' bind:linchange='addImgUrl' bind:linremove='removeImgUrl' showBtn='{{ showBtn }}'/>
+			<x-image-picker urls="{{ store.filedata }}" count="3" size="3" preview='{{ true }}' bind:linchange='addImgUrl' bind:linremove='removeImgUrl' showBtn='{{ showBtn }}' mode='scaleToFill'/>
 		</content-card>
 
 		<view class="content" slot='submit'>
 			<x-button loading="{{ srartSubmit }}" size="large">确认提交</x-button>
 		</view>
-
 	</x-form>
 </content-card>

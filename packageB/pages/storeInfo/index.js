@@ -102,26 +102,33 @@ Page({
 
 
     HTTP.httpGet('getRepairInfo').then(res => {
-      res.rows[0].filedata = res.rows[0].filedata.split(',');
+      if (res[0] != null) {
+        res.rows[0].filedata = res.rows[0].filedata.split(',');
 
-      res.rows[0].filedata = res.rows[0].filedata.map((item) => {
-        wx.hideLoading();
-        if (item.indexOf('https') === -1) {
-          return {
-            url: config.HttpRequest + '/' + item
+        res.rows[0].filedata = res.rows[0].filedata.map((item) => {
+          wx.hideLoading();
+          if (item.indexOf('https') === -1) {
+            return {
+              url: config.HttpRequest + '/' + item
+            }
+          } else {
+            return {
+              url: item
+            }
           }
-        } else {
-          return {
-            url: item
-          }
+        })
+        if (!res.rows[0].address) {
+          this.GetStoreAddress();
         }
-      })
-      if (!res.rows[0].address) {
-        this.GetStoreAddress();
+        self.setData({
+          store: res.rows[0],
+          showBtn: res.rows[0].filedata.length < 3 ? true : false
+        })
+        return
       }
+      this.GetStoreAddress();
       self.setData({
-        store: res.rows[0],
-        showBtn: res.rows[0].filedata.length < 3 ? true : false
+        showBtn: true
       })
     }).catch(err => {
       console.log(err)
@@ -155,11 +162,8 @@ Page({
         latitude: position.latitude,
         longitude: position.longitude
       }).then(res => {
-        console.log(res)
-        let store = this.data.store;
-        store.address = res.rows[0].address;
         self.setData({
-          store,
+          ['store.address']:res.rows[0].address,
           latitude: position.latitude,
           longitude: position.longitude
         })

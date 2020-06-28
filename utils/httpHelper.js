@@ -140,7 +140,6 @@ function BatchUpload(url, files, data, cb,fail) {
  *  cb 回调函数
  */
 function SingleUpload(url, filePaths, successUp, failUp, i, length, data, cb, fail, _uploadFileStr) {
-    console.log(_uploadFileStr.length)
     wx.uploadFile({
         url: getHost() + url,
         filePath: filePaths[i],
