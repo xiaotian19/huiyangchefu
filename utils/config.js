@@ -147,6 +147,10 @@ var _config = {
     image: 'mendian', // 图标
     text: '门店信息', //名字
     url: '/packageB/pages/storeInfo/index'
+  },{
+    image: 'kefu', // 图标
+    text: '联系客服', //名字
+    url: "联系客服"
   }],
 
   /**
@@ -159,6 +163,10 @@ var _config = {
     image:"lianluojilu",
     text: '我邀请的门店', //名字
     url: "/packageB/pages/myInviteRepair/index"
+  },{
+    image: 'kefu', // 图标
+    text: '联系客服', //名字
+    url: "联系客服"
   }],
 
   /**
@@ -168,6 +176,10 @@ var _config = {
     image:'lianluojilu',
     text: '我的核销', //名字
     url: "/packageB/pages/repairCoupon/index"
+  },{
+    image: 'kefu', // 图标
+    text: '联系客服', //名字
+    url: "联系客服"
   }]
 
 }

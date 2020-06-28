@@ -24,7 +24,7 @@
 <!-- boos -->
 
 <content-card class="content" isTitle='{{ flase }}' wx:if='{{ userRole == 2 }}'>
-	<x-list title="{{ item.text }}" tapType='tap' icon="yaopin" l-class-icon="iconfont" wx:for='{{ boos }}' wx:key='index' icon='{{item.image}}' url='{{ item.url }}' data-index='{{ index }}'/>
+	<x-list title="{{ item.text }}" tapType='tap' icon="yaopin" l-class-icon="iconfont" wx:for='{{ boos }}' wx:key='index' icon='{{item.image}}' url='{{ item.url }}' data-index='{{ index }}' bind:lintap='tapCustom' />
 </content-card>
 
 
@@ -34,7 +34,7 @@
 <!-- 地区经理 -->
 
 <content-card class="content"  isTitle='{{ flase }}'  wx:if='{{ userRole == 4 }}'>
-	<x-list title="{{ item.text }}" icon='{{ item.image }}' l-class-icon="iconfont" wx:for='{{ repair }}' wx:key='index' url='{{ item.url }}' data-index='{{ index }}' bind:lintap='repairTapType' />
+	<x-list title="{{ item.text }}" icon='{{ item.image }}' l-class-icon="iconfont" wx:for='{{ repair }}' wx:key='index' url='{{ item.url }}' data-index='{{ index }}' bind:lintap='tapCustom' />
 </content-card>
 
 
@@ -45,7 +45,7 @@
 <!-- 员工 -->
 
 <content-card class="content"  isTitle='{{ flase }}'  wx:if='{{ userRole == 3 }}'>
-	<x-list title="{{ item.text }}" icon='{{item.image}}' l-class-icon="iconfont" wx:for='{{ staff }}' wx:key='index'  url='{{ item.url }}' data-index='{{ index }}' />
+	<x-list title="{{ item.text }}" icon='{{item.image}}' l-class-icon="iconfont" wx:for='{{ staff }}' wx:key='index'  url='{{ item.url }}' data-index='{{ index }}'bind:lintap='tapCustom'  />
 </content-card>
 
 

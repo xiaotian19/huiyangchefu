@@ -115,6 +115,18 @@ Page({
   },
 
   /**
+   * 
+   * @param {object} e 组件抛出对象 
+   */
+  tapCustom(e){
+    if(e.detail.e.currentTarget.dataset.url == '联系客服'){
+      wx.makePhoneCall({
+        phoneNumber: '18229680556',
+      })
+    }
+  },
+
+  /**
    * 获取邀请二维码
    * @param {string} url  扫码跳转页面路径
    * @param {string} role 邀请提示
