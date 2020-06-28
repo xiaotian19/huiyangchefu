@@ -180,6 +180,16 @@ var _config = {
     image: 'kefu', // 图标
     text: '联系客服', //名字
     url: "联系客服"
+  }],
+
+  /**
+   * 车主
+   */
+
+   car:[{
+    image: 'kefu', // 图标
+    text: '联系客服', //名字
+    url: "联系客服"
   }]
 
 }

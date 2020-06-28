@@ -20,6 +20,11 @@
 </view>
 <!-- 我的工具 -->
 
+<!-- 车主 -->
+<content-card class="content"  isTitle='{{ flase }}'  wx:if='{{ userRole == 1 }}'>
+	<x-list title="{{ item.text }}" icon='{{item.image}}' l-class-icon="iconfont" wx:for='{{  car }}' wx:key='index'  url='{{ item.url }}' data-index='{{ index }}'bind:lintap='tapCustom'  />
+</content-card>
+<!-- 车主 -->
 
 <!-- boos -->
 
@@ -48,8 +53,8 @@
 	<x-list title="{{ item.text }}" icon='{{item.image}}' l-class-icon="iconfont" wx:for='{{ staff }}' wx:key='index'  url='{{ item.url }}' data-index='{{ index }}'bind:lintap='tapCustom'  />
 </content-card>
 
-
 <!-- 员工 -->
+
 
 <!-- 邀请二维码 -->
 
