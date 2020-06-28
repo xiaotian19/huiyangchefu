@@ -99,7 +99,7 @@ Page({
 
 
     HTTP.httpGet('getRepairInfo').then(res => {
-      if (typeof res.rows[0] == 'object') {
+      if (res.rows[0] != null) {
         res.rows[0].filedata = res.rows[0].filedata.split(',');
 
         res.rows[0].filedata = res.rows[0].filedata.map((item) => {
