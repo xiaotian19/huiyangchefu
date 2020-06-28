@@ -9,8 +9,10 @@ Page({
     stores: [], //门店信息
     page: 1, //加载页面数
     isBottom: true, //判断触底加载是否完毕
-    isShow:false,//页底加载显示
-    loadingType:'loading',//加载类型
+    isShow: false, //页底加载显示
+    loadingType: 'loading', //加载类型
+    inputValue: '', //输入框内容
+    oldInputValue:'',//记录上一次搜索
   },
 
   /**
@@ -60,7 +62,7 @@ Page({
    */
   onReachBottom: function () {
     if (this.data.isBottom) {
-      this.getLocationReStores(this.data.page + 1);
+      this.getLocationReStores(this.data.page + 1, this.data.inputValue);
     }
   },
 
@@ -79,18 +81,19 @@ Page({
    * 查询附近的门店
    * @param {Number} page 页面数
    */
-  getLocationReStores(page) {
+  getLocationReStores(page, inputValue) {
     let self = this;
-    if(page > 1){
+    if (page > 1) {
       self.setData({
-        isShow:true
+        isShow: true
       })
     }
-    HTTP.httpGet('getLocationReStores', {
+    HTTP.httpPost('getLocationReStores', {
       latitude: wx.getStorageSync('latitude'),
       longitude: wx.getStorageSync('longitude'),
+      name: inputValue || '',
       page: page
-    }).then(res => {
+    }, '加载中').then(res => {
       res.rows = res.rows.map((item) => {
         if (item.filedata) {
           item.filedata = item.filedata.split(',')
@@ -99,24 +102,85 @@ Page({
         }
         return item
       })
-      if(res.rows.length < 20){
+      if (inputValue && page == 1) {
+        self.setData({
+          stores: []
+        })
+      }
+
+      if (res.rows.length < 20) {
         self.setData({
           isShow: true && [...this.data.stores, ...res.rows].length > 0,
-          loadingType:'end',
-          isBottom:false,
-          stores: [...this.data.stores, ...res.rows]
+          loadingType: 'end',
+          isBottom: false,
+          page,
+          stores: [...this.data.stores, ...res.rows],
+          oldInputValue:inputValue
         })
         return
       }
       self.setData({
-        isShow:false,
-        stores: [...this.data.stores, ...res.rows]
+        isShow: false,
+        page,
+        stores: [...this.data.stores, ...res.rows],
+        oldInputValue:inputValue
       })
     }).catch(err => {
       console.log('获取附近门店失败----', err)
     })
   },
 
+
+  /**
+   * 搜索
+   * @param {objct} e 
+   */
+
+  searchStore() {
+    let inputValue = this.data.inputValue;
+    if (inputValue) {
+      this.getLocationReStores(1, inputValue)
+    }
+  },
+
+  /**
+   * 清空输入框
+   */
+  clearInputValue() {
+    this.setData({
+      stores: []
+    })
+    this.getLocationReStores(1);
+  },
+
+  /**
+   * 获取输入框value
+   * @param {object} e 
+   */
+
+  getInputValue(e) {
+    if (e.detail.cursor == 0 && this.data.oldInputValue) {
+      this.setData({
+        stores: []
+      })
+      this.getLocationReStores(1);
+    }
+    this.setData({
+      inputValue: e.detail.value
+    })
+  },
+
+
+  /**
+   * 点击完成开始搜索
+   * @param {object} e 
+   */
+  inputFirm(e) {
+    let inputValue = this.data.inputValue;
+    if (inputValue) {
+      this.getLocationReStores(1, inputValue)
+    }
+  },
 
   /**
    * 拨打电话
