@@ -48,12 +48,13 @@
 
 		<x-form-item label='门店地址' name="address" l-form-label-class='label_text' tip-type='message' rules='{{ addressRules }}' align-items='center' label-width='300'>
 
-			<x-input l-class="l-input-container-class" id="address" value="{{ store.address }}" hide-label placeholder="请输入门店地址" type="text" tipType="message" />
-
+			<x-input l-class="l-input-container-class" id="address" value="{{ store.address }}" hide-label placeholder="请输入门店地址" type="text" tipType="message">
+				<view slot='right' class="address" bindtap="GetStoreAddress">重新定位</view>
+			</x-input>
 		</x-form-item>
 
-<!-- 
-		<x-form-item name='profile' tip-type='message' labelWidth='0' l-form-item-class='form_item' rules='{{ profileRules }}' wx:if='{{ false }}'>
+
+<!-- 		<x-form-item name='profile' tip-type='message' labelWidth='0' l-form-item-class='form_item' rules='{{ profileRules }}' wx:if='{{ false }}'>
 			<content-card class="content" name="门店简介">
 
 				<x-textarea l-class="textarea-class" placeholder="尽情展示自己..." tipType="message" rules="{{ userRules }}" id='profile' auto-height='{{ true }}' maxlength='{{ 300 }}' value="{{ store.profile }}" />

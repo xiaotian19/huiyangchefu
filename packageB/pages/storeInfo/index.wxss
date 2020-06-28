@@ -36,3 +36,9 @@ page{
 .form_item{
   padding: 0rpx !important;
 }
+
+.address{
+font-size: 22rpx;
+color: #3963bc;
+padding-left: 20rpx;
+}
