@@ -148,7 +148,8 @@ Page({
    */
   clearInputValue() {
     this.setData({
-      stores: []
+      stores: [],
+      inputValue:''
     })
     this.getLocationReStores(1);
   },
