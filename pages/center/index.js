@@ -146,7 +146,6 @@ Page({
     let self = this;
 
     HTTP.httpGet('getUserInfo').then(res => {
-      console.log(res)
       if (res.rows.length > 0) {
         self.setData({
           userRole: res.rows[0].userType,

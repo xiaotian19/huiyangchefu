@@ -1,7 +1,4 @@
 let HTTP = require('../../../utils/httpHelper.js');
-const {
-  httpGet
-} = require('../../../utils/httpHelper.js');
 let config = require('../../../utils/config.js').config;
 let app = getApp();
 
@@ -102,7 +99,7 @@ Page({
 
 
     HTTP.httpGet('getRepairInfo').then(res => {
-      if (res[0] != null) {
+      if (typeof res.rows[0] == 'object') {
         res.rows[0].filedata = res.rows[0].filedata.split(',');
 
         res.rows[0].filedata = res.rows[0].filedata.map((item) => {

@@ -15,7 +15,7 @@
 					<x-icon name='dianhua' size="40"></x-icon>
 					<view class="_tell">{{ item.phone }}</view>
 				</view>
-				<view class="_distance">距您当前位置：{{ item.distance <= 1000? item.distance+'米': item.distance/1000 + '千米' }}</view>
+				<view class="_distance">距您当前位置：{{ item.distance <= 1000? item.distance+'m': item.distance/1000 + 'km' }}</view>
 			</view>
 			<view class="storeInfo_address flex_nowrap">
 				<x-icon name='dingwei' size="40"></x-icon>
