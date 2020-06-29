@@ -93,7 +93,7 @@ Component({
         linkType,
         url
       } = e.currentTarget.dataset;
-      if (url) {
+      if (url.indexOf('pages') != -1 ) {
         wx[linkType]({
           url
         });
