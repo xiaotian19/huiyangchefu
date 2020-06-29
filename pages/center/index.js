@@ -107,23 +107,18 @@ Page({
   },
 
   /**
-   * 地区经理点击事件
-   */
-  repairTapType(e) {
-    if (e.currentTarget.dataset.index == 0) {
-      this.getCode("packageA/pages/userRepair/index", '你正在邀请：门店');
-    }
-  },
-
-  /**
-   * 
+   * 联系客服
    * @param {object} e 组件抛出对象 
    */
   tapCustom(e){
+    console.log(e)
     if(e.detail.e.currentTarget.dataset.url == '联系客服'){
       wx.makePhoneCall({
         phoneNumber: '18229680556',
       })
+    }
+    if(e.detail.e.currentTarget.dataset.url == '邀请门店加入'){
+      this.getCode("packageA/pages/userRepair/index", '你正在邀请：门店');
     }
   },
 

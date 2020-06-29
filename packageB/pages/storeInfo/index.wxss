@@ -1,4 +1,4 @@
-page{
+page {
   padding-top: 70rpx;
 }
 
@@ -23,7 +23,7 @@ page{
 }
 
 
-.label_text{
+.label_text {
   font-size: 26rpx;
   color: #333;
   text-align: center;
@@ -33,12 +33,16 @@ page{
   width: 100% !important;
 }
 
-.form_item{
+.form_item {
   padding: 0rpx !important;
 }
 
-.address{
-font-size: 22rpx;
-color: #3963bc;
-padding-left: 20rpx;
+.address {
+  line-height: 50rpx;
+  font-size: 22rpx;
+  color: #3963bc;
+  padding: 0rpx 20rpx;
+  border: 1rpx solid #3963bc;
+  text-align: center;
+  border-radius: 10rpx;
 }

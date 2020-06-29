@@ -159,6 +159,7 @@ var _config = {
   repair: [{
     image:'assist',
     text: '邀请门店加入', //名字
+    url: "邀请门店加入"
   }, {
     image:"lianluojilu",
     text: '我邀请的门店', //名字
