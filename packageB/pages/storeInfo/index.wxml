@@ -64,7 +64,7 @@
 		</x-form-item> -->
 
 		<content-card class="content" name="上传门店照片">
-			<x-image-picker urls="{{ store.filedata }}" count="3" size="3" preview='{{ true }}' bind:linchange='addImgUrl' bind:linremove='removeImgUrl' showBtn='{{ showBtn }}' mode='scaleToFill'/>
+			<x-image-picker urls="{{ store.filedata }}" count="1" size="3" preview='{{ true }}' bind:linchange='addImgUrl' bind:linremove='removeImgUrl' showBtn='{{ showBtn }}' mode='scaleToFill'/>
 		</content-card>
 
 		<view class="content" slot='submit'>

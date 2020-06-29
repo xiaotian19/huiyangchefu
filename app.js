@@ -161,6 +161,7 @@ App({
             // 记录token 
             wx.setStorageSync('token', res.rows[0].token);
             wx.setStorageSync('userId', res.rows[0].id);
+            wx.removeStorageSync('invite')
             wx.removeStorageSync('inviteId');
             resolve(res.rows)
           }).catch(err => {
