@@ -1,8 +1,8 @@
 <view class="search-bar l-container-class">
 	<slot name="before" />
-	<view wx:if="{{frontText}}" class="icon-container" bind:tap="handleTapFrontText">
+	<view wx:if="{{frontText || fronIcon}}" class="icon-container l-front-text-class" bind:tap="handleTapFrontText">
 		<text class="city">{{frontText}}</text>
-		<l-icon name="down" color="#333" size="22" />
+		<l-icon name="{{ fronIcon }}" color="{{ fronIconColor }}" size="{{ fronIconSize }}" />
 	</view>
 	<view class="search-input l-class {{'search-input-'+ shape}}" style="{{'background-color:'+bgColor}}">
 		<slot wx:if="{{custom}}" name="icon" />

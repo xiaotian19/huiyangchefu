@@ -10,7 +10,8 @@ Component({
     'l-placeholder-class',
     'l-icon-class',
     'l-input-class',
-    'l-cancel-class'
+    'l-cancel-class',
+    'l-front-text-class'
   ],
   behaviors: [validator],
   options: {
@@ -27,6 +28,9 @@ Component({
       value: '取消'
     },
     frontText: String,
+    fronIcon:String,
+    fronIconColor:String,
+    fronIconSize:String,
     custom: Boolean,
     value: String,
     type: String,

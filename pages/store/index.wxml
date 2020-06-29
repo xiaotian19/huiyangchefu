@@ -1,6 +1,6 @@
 
 
-<x-search-bar placeholder="请输入搜索门店名称" cancel-text='搜索' icon='sousuo' icon-size='40' bg-color='#fff' l-cancel-class='search_btn' icon-color='5677FC' l-container-class='search' shape='primary' bind:lincancel='searchStore' bind:linchange='getInputValue' bind:linclear='clearInputValue'  bind:linconfirm='inputFirm'/>
+<x-search-bar placeholder="请输入搜索门店名称" cancel-text='搜索' fronIcon='shuaxin' fronIconSize='{{ 45 }}'icon='sousuo' icon-size='40' bg-color="#f6f6f6" l-cancel-class='search_btn' icon-color='5677FC' l-container-class='search' shape='primary' bind:lincancel='searchStore' bind:linchange='getInputValue' bind:linclear='clearInputValue'  bind:linconfirm='inputFirm' bind:linfronttap='clearInputValue' l-front-text-class='search_load'/>
 
 <view class="store flex_dir">
 	<view class="storeInfo" wx:for='{{ stores }}' wx:key='index'>
