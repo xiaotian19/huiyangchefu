@@ -119,7 +119,7 @@ Page({
         }
         self.setData({
           store: res.rows[0],
-          showBtn: res.rows[0].filedata.length < 1 ? true : false
+          showBtn: res.rows[0].filedata.length < 3 ? true : false
         })
         return
       }
