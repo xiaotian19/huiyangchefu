@@ -100,8 +100,12 @@ Page({
 
     HTTP.httpGet('getRepairInfo').then(res => {
       if (res.rows[0] != null) {
-        res.rows[0].filedata = res.rows[0].filedata.split(',');
-
+        if(typeof res.rows[0].filedata == 'string' && res.rows[0].filedata != ''){
+          res.rows[0].filedata = res.rows[0].filedata.split(',');
+        }else{
+          res.rows[0].filedata = [];
+        }
+        
         res.rows[0].filedata = res.rows[0].filedata.map((item) => {
           wx.hideLoading();
           if (item.indexOf('https') === -1) {
@@ -114,12 +118,13 @@ Page({
             }
           }
         })
+
         if (!res.rows[0].address) {
           this.GetStoreAddress();
         }
         self.setData({
           store: res.rows[0],
-          showBtn: res.rows[0].filedata.length < 3 ? true : false
+          showBtn: res.rows[0].filedata.length < 1 ? true : false
         })
         return
       }
@@ -271,6 +276,15 @@ Page({
               return;
             }
           }, function (err) {
+            wx.hideLoading()
+            wx.showToast({
+              title: '图片上传失败！',
+              mask: true,
+              icon: 'none'
+            });
+            self.setData({
+              srartSubmit: false
+            })
             console.log(err)
           });
         }

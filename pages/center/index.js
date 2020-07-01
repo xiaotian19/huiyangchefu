@@ -111,7 +111,6 @@ Page({
    * @param {object} e 组件抛出对象 
    */
   tapCustom(e){
-    console.log(e)
     if(e.detail.e.currentTarget.dataset.url == '联系客服'){
       wx.makePhoneCall({
         phoneNumber: '18229680556',
