@@ -18,7 +18,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getTakeDetail(1,this.data.dateInput);
+    this.getTakeDetail(1, this.data.dateInput);
   },
 
   /**
@@ -32,7 +32,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getTakeDetail(1,this.data.dateInput);
+    if (wx.getStorageSync('token') != '') {
+      this.getTakeDetail(1, this.data.dateInput);
+    }
   },
 
   /**
@@ -61,7 +63,7 @@ Page({
    */
   onReachBottom: function () {
     if (this.data.isbottom) {
-      this.getTakeDetail(this.data.page + 1,this.data.dateInput);
+      this.getTakeDetail(this.data.page + 1, this.data.dateInput);
     }
   },
 
@@ -106,9 +108,9 @@ Page({
   cancleDateTime() {
     this.setData({
       dateInput: '',
-      take:[]
+      take: []
     })
-    this.getTakeDetail(1,this.data.dateInput);
+    this.getTakeDetail(1, this.data.dateInput);
   },
 
 
@@ -127,7 +129,7 @@ Page({
 
   dateTimeSearch() {
     this.setData({
-      take:[]
+      take: []
     })
     this.getTakeDetail(1, this.data.dateInput)
   },
