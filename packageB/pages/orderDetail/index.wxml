@@ -1,16 +1,31 @@
   <wxs src='../../../utils/wxs/money.wxs' module='money'></wxs>
-  
-  <view class="order_detail flex_nowrap" wx:if='{{ order.length != 0 }}' wx:for='{{ order }}' wx:key='index'>
-    <view class="order_info flex_dir">
-      <view class="order_info_name">{{ item.couponName }}</view>
-      <view class="order_info_time">{{ item.payTime }}</view>
-    </view>
-    <view class="order_money  flex_nowrap ">-{{ money.Format(item.payment,2) }}</view>
+
+  <view class="dateTime">
+  	<x-icon name='shuaxin' size="40" bindtap="cancleDateTime"></x-icon>
+  	<input class="dateInput" value="{{ dateInput }}" disabled placeholder='点击按钮选择筛选时间' bindtap="dateTimeShow"></input>
+  	<view class="dateBtn" bindtap="dateTimeSearch">搜索</view>
   </view>
-  
-  
+
+
+  <view class="order_detail flex_nowrap" wx:if='{{ order.length != 0 }}' wx:for='{{ order }}' wx:key='index'>
+  	<view class="order_info flex_dir">
+  		<view class="order_info_name">{{ item.couponName }}</view>
+  		<view class="order_info_time">{{ item.payTime }}</view>
+  	</view>
+  	<view class="order_money  flex_nowrap ">-{{ money.Format(item.payment,2) }}</view>
+  </view>
+
+
   <!-- 无数据显示 -->
   <view class='noData' wx:if='{{ order.length == 0 }}'>
   	<x-tips fixed="{{ false }}" imgUrl="/static/images/noData.png">暂无购买记录~~</x-tips>
   </view>
   <!-- 无数据显示 -->
+
+
+
+  <!-- 时间选择 -->
+
+  <dateTime type='{{ 3 }}' id='tui-dateTime-ctx' cancelColor="{{cancelColor}}" bindconfirm="dateChange"></dateTime>
+
+  <!-- 时间选择 -->

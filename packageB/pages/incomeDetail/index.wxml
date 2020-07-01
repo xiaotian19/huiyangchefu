@@ -1,6 +1,13 @@
   <wxs src='../../../utils/wxs/money.wxs' module='money'></wxs>
+
+   <view class="dateTime">
+    <x-icon name='shuaxin' size="40" bindtap="cancleDateTime"></x-icon>
+  	<input class="dateInput" value="{{ dateInput }}" disabled placeholder='点击按钮选择筛选时间' bindtap="dateTimeShow"></input>
+  	<view class="dateBtn" bindtap="dateTimeSearch">搜索</view>
+ <view class="income_info_number" wx:if='{{ income.length != 0 }}'>总收入：￥{{ total }} </view>
+  </view>
   
-  <view class="income_info_number" wx:if='{{ income.length != 0 }}'>总收入：￥{{ total }} </view>
+  
 
   <view class="income_detail flex_nowrap" wx:if='{{ income.length != 0 }}' wx:for='{{ income }}' wx:key='index'>
     <view class="income_info flex_dir">
@@ -16,3 +23,9 @@
   	<x-tips fixed="{{ false }}" imgUrl="/static/images/noData.png">暂无收入~~</x-tips>
   </view>
   <!-- 无数据显示 -->
+
+    <!-- 时间选择 -->
+
+  <dateTime type='{{ 3 }}' id='tui-dateTime-ctx' cancelColor="{{cancelColor}}" bindconfirm="dateChange"></dateTime>
+
+  <!-- 时间选择 -->

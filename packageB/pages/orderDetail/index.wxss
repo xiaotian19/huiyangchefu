@@ -3,6 +3,41 @@ page{
   background-color: #f7f7f7;
 }
 
+.dateTime{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+
+.dateInput{
+  width: 400rpx;
+  height: 50rpx;
+  border: 1rpx solid #cccccc;
+  border-radius: 20rpx;
+  padding: 5rpx 20rpx;
+  background-color: #fff;
+  font-size: 23rpx;
+  text-align: center;
+  margin: 30rpx 0;
+}
+
+.dateBtn{
+  width: 150rpx;
+  height: 60rpx;
+  background-color: #5677FC;
+  color: #fff;
+  font-size: 23rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+  margin: 30rpx 0;
+}
+
 .order_detail{
   width: 90%;
   height: 120rpx;
