@@ -13,7 +13,7 @@ Page({
       required: true,
       message: '请输入手机号'
     }, {
-      pattern: "^1(3|4|5|7|8)\\d{9}$",
+      pattern: "^1([1-9])\\d{9}$",
       message: '手机号格式不正确，请重新输入'
     }],
     nameRules: { //门店名称验证
