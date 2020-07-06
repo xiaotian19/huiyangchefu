@@ -38,6 +38,7 @@ page {
 }
 
 .address {
+  margin-left: 10rpx;
   line-height: 45rpx;
   font-size: 22rpx;
   color: #3963bc;

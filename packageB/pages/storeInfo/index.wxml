@@ -40,7 +40,7 @@
 
 		<x-form-item label='联系电话' name='phone' l-form-label-class='label_text' tip-type='message' rules='{{ phoneRules }}' align-items='center' label-width='300'>
 
-			<x-input l-class="l-input-container-class" id="phone" value="{{ store.phone }}" hide-label placeholder="请输入联系电话" type="text" tipType="message" maxlength='{{ 11 }}' />
+			<x-input l-class="l-input-container-class"  type='number' id="phone" value="{{ store.phone }}" hide-label placeholder="请输入联系电话" tipType="message" maxlength='{{ 11 }}' />
 
 		</x-form-item>
 
